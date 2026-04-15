@@ -13,11 +13,53 @@
     enable = true;
     settings = {
       bar = {
-        density = "compact";
+        density = "default";
         position = "left";
         showCapsule = false;
+
+        widgets = {
+          left = [
+            {
+              id = "Launcher";
+            }
+            {
+              id = "Clock";
+            }
+            {
+              id = "SystemMonitor";
+            }
+          ];
+
+          center = [
+            {
+              id = "Workspace";
+            }
+          ];
+
+          right = [
+            {
+              id = "NotificationHistory";
+            }
+            {
+              id = "Battery";
+            }
+            {
+              id = "Volume";
+            }
+            {
+              id = "ControlCenter";
+            }
+          ];
+        };
       };
-      colorSchemes.predefinedScheme = "Monochrome";
+      colorSchemes = {
+        useWallpaperColors = true;
+      };
+      templates = {
+        activeTemplates = [
+          foot
+        ];
+      };
     };
   };
 
@@ -96,6 +138,18 @@
     ];
 
     window-rules = [
+      # General windows rules
+      {
+        geometry-corner-radius = {
+          bottom-left = 20.0;
+          bottom-right = 20.0;
+          top-left = 20.0;
+          top-right = 20.0;
+        };
+
+        clip-to-geometry = true;
+      }
+
       # WezTerm initial configure bug workaround
       {
         matches = [{ app-id = "^org\\.wezfurlong\\.wezterm$"; }];
@@ -116,12 +170,14 @@
     binds = with { sh = s: { spawn = [ "sh" "-c" s ]; }; }; {
       "Mod+Shift+Slash".action.show-hotkey-overlay = [];
       "Mod+T".action.spawn = "foot";
-      "Mod+D".action.spawn = "fuzzel";
-      "Super+Alt+L".action.spawn = "swaylock";
+      "Mod+D".action.spawn = "noctalia-shell ipc call launcher toggle";
+      "Super+Alt+L".action.spawn = "noctalia-shell ipc call lockScreen lock";
       "Super+Alt+S" = {
         allow-inhibiting = false;
         action = sh "pkill orca || exec orca";
       };
+
+      "Super+B".action.spawn = "firefox";
 
       # Volume
       "XF86AudioRaiseVolume" = { allow-when-locked = true; action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; };
