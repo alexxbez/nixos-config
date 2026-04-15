@@ -16,6 +16,8 @@
   # Allow unfree software
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -114,7 +116,6 @@
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-wlr
     ];
   };
   programs.nix-ld.enable = true;
@@ -134,11 +135,6 @@
     fontconfig
     freetype
     nss
-
-    # noctalia shell
-    # inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-    # noctalia-shell
-    # quickshell
   ];
 
   virtualisation.docker = {
