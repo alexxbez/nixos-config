@@ -184,8 +184,9 @@
     binds = with { sh = s: { spawn = [ "sh" "-c" s ]; }; }; {
       "Mod+Shift+Slash".action.show-hotkey-overlay = [];
       "Mod+T".action.spawn = "foot";
-      "Mod+D".action.spawn = "noctalia-shell ipc call launcher toggle";
-      "Super+Alt+L".action.spawn = "noctalia-shell ipc call lockScreen lock";
+      "Super+Space".action.spawn-sh = "noctalia-shell ipc call launcher toggle";
+      "Super+W".action.spawn-sh = "noctalia-shell ipc call wallpaper toggle";
+      "Super+Alt+L".action.spawn-sh = "noctalia-shell ipc call lockScreen lock";
       "Super+Alt+S" = {
         allow-inhibiting = false;
         action = sh "pkill orca || exec orca";
