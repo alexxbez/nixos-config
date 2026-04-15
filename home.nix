@@ -109,7 +109,7 @@
 
       {
           matches = [{ app-id = "^foot$"; }];
-          opacity = 0.9;
+          opacity = 1.0;
       }
     ];
 
