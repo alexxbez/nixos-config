@@ -304,13 +304,12 @@
 
       format = ''
         [$directory$git_branch](fg:#6b6b6b)
-        [│](fg:#6b6b6b)
         $character
       '';
 
       character = {
-        success_symbol = "[└─❯](bold green)";
-        error_symbol = "[└─❯](bold red)";
+        success_symbol = "[╰─❯](bold green)";
+        error_symbol   = "[╰─❯](bold red)";
       };
 
       directory = {
