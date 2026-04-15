@@ -106,7 +106,7 @@
 
     binds = with { sh = s: { spawn = [ "sh" "-c" s ]; }; }; {
       "Mod+Shift+Slash".action.show-hotkey-overlay = [];
-      "Mod+T".action.spawn = "ghostty";
+      "Mod+T".action.spawn = "foot";
       "Mod+D".action.spawn = "fuzzel";
       "Super+Alt+L".action.spawn = "swaylock";
       "Super+Alt+S" = {
@@ -265,13 +265,15 @@
     };
   };
 
+  fonts.fontconfig.enable = true;
+
   home.packages = with pkgs; [
     chromium
     bun
     neovim
     cmake
     gnumake
-    ghostty
+    nerd-fonts.hasklug
     foot
     git
     fzf
