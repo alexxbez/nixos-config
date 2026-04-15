@@ -285,5 +285,21 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     sessionVariables.EDITOR = "nvim";
+
+    shellAliases = {
+      ls = "eza --icons";
+    };
+  };
+
+
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+    icons = "auto";
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }
