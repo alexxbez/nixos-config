@@ -26,7 +26,12 @@
     input = {
       keyboard = {
         numlock = true;
-        xkb = {};  # uses system locale settings
+        xkb = {
+          options = "caps:swapescape";
+        };
+
+        repeat-delay = 325;
+        repeat-rate = 70;
       };
       touchpad = {
         tap = true;
@@ -101,7 +106,7 @@
 
     binds = with { sh = s: { spawn = [ "sh" "-c" s ]; }; }; {
       "Mod+Shift+Slash".action.show-hotkey-overlay = [];
-      "Mod+T".action.spawn = "alacritty";
+      "Mod+T".action.spawn = "ghostty";
       "Mod+D".action.spawn = "fuzzel";
       "Super+Alt+L".action.spawn = "swaylock";
       "Super+Alt+S" = {
@@ -266,7 +271,7 @@
     neovim
     cmake
     gnumake
-    alacritty
+    ghostty
     git
     fzf
     gcc
