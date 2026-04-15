@@ -17,6 +17,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  programs.niri.package = pkgs.niri-unstable;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -102,6 +103,7 @@
 
   programs.firefox.enable = true;
   programs.niri.enable = true;
+  programs.niri.package = pkgs.niri-unstable;
 
   # might need for keyboard, idk
   # services.libinput.enable = true;
