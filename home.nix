@@ -304,18 +304,18 @@
 
       format = ''
         [╭─](fg:#6b6b6b)[  $directory](fg:#6b6b6b)[  $git_branch](fg:#6b6b6b)
-        $character
+        [╰─](fg:#6b6b6b)$character
       '';
 
       character = {
-        success_symbol = "[╰─❯](bold green)";
-        error_symbol   = "[╰─❯](bold red)";
+        success_symbol = "[](bold green)";
+        error_symbol   = "[](bold red)";
       };
 
       directory = {
-        format = "$path";  # important: keeps it clean like OMP
+        format = "$path";
         truncation_length = 3;
-        home_symbol = "~";
+        home_symbol = "";
       };
 
       git_branch = {
@@ -335,4 +335,4 @@
     enableZshIntegration = true;
     options = [ "--cmd" "cd" ];
   };
-}
+}❯
