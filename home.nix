@@ -64,6 +64,15 @@
     };
   };
 
+  home.file."cache/noctalia/wallpapers.json" = {
+    text = builtins.toJSON {
+      defaultWallpaper = "/home/alexx/Pictures/wallpapers/wallpaper.png";
+      # wallpapers = {
+      #   "DP-1": "/home/"
+      # };
+    };
+  };
+
   programs.niri.settings = {
 
     input = {
