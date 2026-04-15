@@ -335,4 +335,4 @@
     enableZshIntegration = true;
     options = [ "--cmd" "cd" ];
   };
-}❯
+}
