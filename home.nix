@@ -57,7 +57,8 @@
       };
       templates = {
         activeTemplates = [
-          "Foot"
+          "foot"
+	  "nvim-base16"
         ];
         enableUserTemplates = true;
       };
@@ -66,10 +67,7 @@
 
   home.file."cache/noctalia/wallpapers.json" = {
     text = builtins.toJSON {
-      defaultWallpaper = "/home/alexx/Pictures/wallpapers/wallpaper.png";
-      # wallpapers = {
-      #   "DP-1": "/home/"
-      # };
+      defaultWallpaper = "/home/alexx/Pictures/Wallpapers/wallpaper.png";
     };
   };
 
