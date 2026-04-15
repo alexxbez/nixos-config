@@ -57,8 +57,9 @@
       };
       templates = {
         activeTemplates = [
-          foot
+          "Foot"
         ];
+        enableUserTemplates = true;
       };
     };
   };
