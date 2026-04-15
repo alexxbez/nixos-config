@@ -272,6 +272,7 @@
     cmake
     gnumake
     ghostty
+    foot
     git
     fzf
     gcc
@@ -282,6 +283,9 @@
     jetbrains.webstorm
     jetbrains.datagrip
     zed-editor
+    anki 
+    typst
+    zathura
   ];
 
   programs.zsh = {
