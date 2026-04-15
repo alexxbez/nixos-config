@@ -35,12 +35,16 @@
       };
       touchpad = {
         tap = true;
+        drag-lock = true;
         natural-scroll = true;
+
       };
+
+      focus-follows-mouse.enable = true;
     };
 
     layout = {
-      gaps = 16;
+      gaps = 12;
       center-focused-column = "never";
 
       preset-column-widths = [
@@ -53,14 +57,14 @@
 
       focus-ring = {
         enable = true;
-        width = 4;
+        width = 1;
         active.color = "#7fc8ff";
         inactive.color = "#505050";
       };
 
       border = {
         enable = false;
-        width = 4;
+        width = 0;
         active.color = "#ffc87f";
         inactive.color = "#505050";
         urgent.color = "#9b0000";
@@ -101,6 +105,12 @@
       {
         matches = [{ app-id = "firefox$"; title = "^Picture-in-Picture$"; }];
         open-floating = true;
+      }
+
+      {
+          matches = [{ app-id = "^foot$"; }];
+          opacity = 0.9;
+          focus-opacity = 0.9;
       }
     ];
 
@@ -296,6 +306,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     sessionVariables.EDITOR = "nvim";
+    defaultKeymap = "emacs";
 
     shellAliases = {
       ls = "eza --icons";
