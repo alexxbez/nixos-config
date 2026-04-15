@@ -57,8 +57,14 @@
       };
       templates = {
         activeTemplates = [
-          "foot"
-	  "nvim-base16"
+	  {
+	    id = "foot";
+	    active = true;
+	  }
+	  {
+	    id = "nvim-base16";
+	    active = true;
+	  }
         ];
         enableUserTemplates = true;
       };
