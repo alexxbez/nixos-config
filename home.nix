@@ -31,7 +31,7 @@
         };
 
         repeat-delay = 325;
-        repeat-rate = 90;
+        repeat-rate = 50;
       };
       touchpad = {
         tap = true;
