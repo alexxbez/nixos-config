@@ -296,6 +296,35 @@
     };
   };
 
+  {
+    programs.starship = {
+      enable = true;
+
+      settings = {
+        add_newline = false;
+
+        format = ''
+          [$directory$git_branch](fg:#6b6b6b)
+          [│](fg:#6b6b6b)
+          $character
+        '';
+
+        character = {
+          success_symbol = "[└─❯](bold green)";
+          error_symbol = "[└─❯](bold red)";
+        };
+
+        directory = {
+          format = "$path";
+          truncation_length = 3;
+        };
+
+        git_branch = {
+          format = " $branch";
+        };
+      };
+    };
+  }
 
   programs.eza = {
     enable = true;
