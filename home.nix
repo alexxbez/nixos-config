@@ -141,13 +141,7 @@
 
     animations.enable = true;
 
-    environment = {
-      DISPLAY = ":0";
-      _JAVA_AWT_WM_NONREPARENTING = "1";
-    };
-
     spawn-at-startup = [
-      { argv = [ "Xwayland" ":0" "-noreset" ]; }
       { argv = [ "noctalia-shell" ]; }
     ];
 
@@ -368,10 +362,18 @@
     anki 
     typst
     zathura
+    pyright
   ];
 
-  programs.zsh = {
+  programs.fish = {
     enable = true;
+    shellAliases = {
+      ls = "eza --icons";
+    };
+  };
+
+  programs.zsh = {
+    enable = false;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
@@ -414,12 +416,14 @@
   programs.eza = {
     enable = true;
     enableZshIntegration = true;
+    enableFishIntegration = true;
     icons = "auto";
   };
 
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
+    enableFishIntegration = true;
     options = [ "--cmd" "cd" ];
   };
 }

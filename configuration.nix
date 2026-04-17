@@ -98,7 +98,7 @@
    users.users.alexx = {
      isNormalUser = true;
      extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
-     shell = pkgs.zsh;
+     shell = pkgs.fish;
      packages = with pkgs; [
        tree
      ];
