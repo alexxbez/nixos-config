@@ -58,6 +58,7 @@
   services.upower.enable = true;
 
   programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   # Git configuration
   programs.git = {
