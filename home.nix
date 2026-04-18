@@ -363,6 +363,7 @@
     typst
     zathura
     pyright
+    racket
   ];
 
   programs.fish = {
