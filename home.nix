@@ -84,7 +84,7 @@
         numlock = true;
         xkb = {
           # options = "caps:swapescape";
-          variant = "altgr-intl"
+          variant = "altgr-intl";
         };
 
         repeat-delay = 325;
