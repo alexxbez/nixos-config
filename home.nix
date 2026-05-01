@@ -54,7 +54,7 @@
       };
       colorSchemes = {
         useWallpaperColors = false;
-        predefinedScheme = "Gruvbox"
+        predefinedScheme = "Gruvbox";
       };
     };
   };
