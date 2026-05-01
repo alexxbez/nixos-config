@@ -353,7 +353,6 @@
     zathura
     pyright
     racket
-    spotify
   ];
 
 
