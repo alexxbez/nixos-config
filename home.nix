@@ -353,6 +353,7 @@
     zathura
     pyright
     racket
+    tinymist
   ];
 
 
