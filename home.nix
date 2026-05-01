@@ -365,6 +365,7 @@
     zathura
     pyright
     racket
+    spotify
   ];
 
   programs.fish = {
