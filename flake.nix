@@ -14,6 +14,10 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fenix = {
+        url = "github:nix-community/fenix";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
   };
   outputs = { self, nixpkgs, home-manager, niri, ... } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -22,6 +26,7 @@
       modules = [
         niri.nixosModules.niri
         ./configuration.nix
+        ./fenix.nix
         home-manager.nixosModules.default
         {
           home-manager.useGlobalPkgs = true;

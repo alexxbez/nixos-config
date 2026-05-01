@@ -53,20 +53,8 @@
         };
       };
       colorSchemes = {
-        useWallpaperColors = true;
-      };
-      templates = {
-        activeTemplates = [
-	  {
-	    id = "foot";
-	    active = true;
-	  }
-	  {
-	    id = "nvim-base16";
-	    active = true;
-	  }
-        ];
-        enableUserTemplates = true;
+        useWallpaperColors = false;
+        predefinedScheme = "Gruvbox"
       };
     };
   };
@@ -83,7 +71,7 @@
       keyboard = {
         numlock = true;
         xkb = {
-          # options = "caps:swapescape";
+          options = "caps:swapescape";
           variant = "altgr-intl";
         };
 
@@ -365,7 +353,7 @@
     zathura
     pyright
     racket
-    spotifywm
+    spotify
   ];
 
 
