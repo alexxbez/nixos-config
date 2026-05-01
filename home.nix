@@ -365,8 +365,9 @@
     zathura
     pyright
     racket
-    spotify
   ];
+
+  programs.spotify.enable = true;
 
   programs.fish = {
     enable = true;
