@@ -447,7 +447,14 @@
     '';
   };
 
-  wayland.windowManager.hyprland.enable = true; 
+  wayland.windowManager.hyprland = {
+    enable = true;
+    settings = {
+      "$mod" = "SUPER";
+
+      bind = [ "$mod, T, exec, kitty" ]
+    };
+  };
 
   programs.fish = {
     enable = true;
