@@ -452,7 +452,7 @@
     settings = {
       "$mod" = "SUPER";
 
-      bind = [ "$mod, T, exec, kitty" ]
+      bind = [ "$mod, T, exec, kitty" ];
     };
   };
 
