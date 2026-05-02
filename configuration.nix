@@ -47,15 +47,12 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  services.greetd = {
+  services.displayManager.sddm = {
     enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd niri-session";
-        user = "greeter";
-      };
-    };
+    wayland.enable = true;
   };
+
+  services.envfs.enable = true;
 
   programs.nix-ld = {
     enable = true;
