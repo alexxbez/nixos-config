@@ -447,6 +447,8 @@
     '';
   };
 
+  wayland.windowManager.hyprland.enable = true; 
+
   programs.fish = {
     enable = true;
     shellAliases = {
