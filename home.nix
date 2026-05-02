@@ -71,7 +71,7 @@
       keyboard = {
         numlock = true;
         xkb = {
-          options = "caps:swapescape";
+          # options = "caps:swapescape";
           variant = "altgr-intl";
         };
 
@@ -166,7 +166,7 @@
 
     binds = with { sh = s: { spawn = [ "sh" "-c" s ]; }; }; {
       "Mod+Shift+Slash".action.show-hotkey-overlay = [];
-      "Mod+T".action.spawn = "foot";
+      "Mod+T".action.spawn = "kitty";
       "Super+Space".action.spawn-sh = "noctalia-shell ipc call launcher toggle";
       "Super+W".action.spawn-sh = "noctalia-shell ipc call wallpaper toggle";
       "Super+Alt+L".action.spawn-sh = "noctalia-shell ipc call lockScreen lock";
@@ -337,7 +337,7 @@
     cmake
     gnumake
     nerd-fonts.hasklug
-    foot
+    kitty
     git
     fzf
     gcc
