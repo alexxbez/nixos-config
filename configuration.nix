@@ -47,6 +47,26 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.niri}/bin/niri-session";
+        user = "alexx";
+      };
+    };
+  };
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      wayland
+      libxkbcommon
+      vulkan-loader
+      libGL
+    ];
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.displayManager.startx.enable = true;
