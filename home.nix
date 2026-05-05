@@ -71,7 +71,7 @@
       keyboard = {
         numlock = true;
         xkb = {
-          # options = "caps:swapescape";
+          options = "caps:swapescape";
           variant = "altgr-intl";
         };
 
