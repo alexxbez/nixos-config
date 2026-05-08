@@ -354,6 +354,7 @@
     pyright
     racket
     tinymist
+    nil
   ];
 
   programs.kitty = {
