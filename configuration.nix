@@ -2,16 +2,25 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Experimental features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Allow unfree software
   nixpkgs.config.allowUnfree = true;
@@ -91,7 +100,6 @@
   # Start ssh agent
   # programs.ssh.startAgent = true;
   # apparently gnome ssh agent is already on
-  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -103,23 +111,28 @@
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    alsa.enable = true;
+    wireplumber.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.alexx = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
-     shell = pkgs.fish;
-     packages = with pkgs; [
-       tree
-     ];
-   };
+  users.users.alexx = {
+    isNormalUser = true;
+    extraGroups = [
+      "wheel"
+      "docker"
+    ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.fish;
+    packages = with pkgs; [
+      tree
+    ];
+  };
 
   programs.firefox.enable = true;
 
@@ -174,7 +187,10 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 5173 8383 ];
+  networking.firewall.allowedTCPPorts = [
+    5173
+    8383
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -204,4 +220,3 @@
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }
-
