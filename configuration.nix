@@ -25,11 +25,7 @@
   # Allow unfree software
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-  programs.niri = {
-    enable = true;
-    package = pkgs.niri-unstable;
-  };
+  programs.hyprland.enable = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
