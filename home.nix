@@ -439,7 +439,7 @@
     tinymist
     nil
     obs-studio
-    ciscoPacketTracer9
+    ciscoPacketTracer8
   ];
 
   programs.kitty = {
