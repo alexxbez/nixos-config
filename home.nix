@@ -89,6 +89,7 @@
     jetbrains-toolbox
     jetbrains.webstorm
     jetbrains.datagrip
+    jetbrains.pycharm
     zed-editor
     anki
     typst
