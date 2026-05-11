@@ -52,11 +52,6 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
-
   services.envfs.enable = true;
 
   programs.nix-ld = {
