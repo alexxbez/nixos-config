@@ -200,7 +200,7 @@
       ];
 
       monitor = [
-        "eDP-2,preferred,auto,1.0"
+        "eDP-1,preferred,auto,1.0"
         "HDMI-A-1,highrr,auto-up,1"
       ];
 
