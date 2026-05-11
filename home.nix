@@ -328,7 +328,7 @@
         "$mainMod, Q, killactive"
         "$mainMod, B, exec, firefox"
         "$mainMod, V, togglefloating"
-        "$mainMod, space, exec, noctalia-shell ipc launcher toggle"
+        "$mainMod, space, exec, noctalia-shell ipc call launcher toggle"
         "$mainMod, C, exec, kitty --title qalc-popup qalc"
         "$mainMod, h, movefocus, l"
         "$mainMod, l, movefocus, r"
