@@ -83,6 +83,7 @@
     cmake
     gnumake
     nerd-fonts.hasklug
+    nerd-fonts.jetbrains-mono
     kitty
     git
     fzf
@@ -111,91 +112,94 @@
     enable = true;
 
     font = {
-      name = "Hasklug Nerd Font Mono";
+      name = "JetBrainsMono Nerd Font";
       size = 11.0;
     };
 
-    extraConfig = ''
-      disable_ligatures cursor
+    settings = {
+      disable_ligatures = "cursor";
 
-      # arrow mapping
-      map ctrl+j send_text all \x1b[B
-      map ctrl+k send_text all \x1b[A
+      map = [
+        "ctrl+j send_text all \\x1b[B"
+        "ctrl+k send_text all \\x1b[A"
+        "shift+cmd+v paste_from_buffer a1"
+        "ctrl+backspace send_text all \\x17"
+      ];
 
-      # cursor customization 
-      cursor_shape block
-      shell_integration no-cursor
-      cursor_shape_unfocused hollow
-      cursor_blink_interval 1
-      cursor_stop_blinking_after 3
+      cursor_shape = "block";
+      shell_integration = "no-cursor";
+      cursor_shape_unfocused = "hollow";
+      cursor_blink_interval = 1;
+      cursor_stop_blinking_after = 3;
 
-      cursor_trail 1
-      cursor_trail_start_threshold 1
+      cursor_trail = 1;
+      cursor_trail_start_threshold = 1;
 
-      # Scrollback 
-      scrollback_lines 2000
-      scrollback_indicator_opacity 0.2
-      scrollback_fill_enlarged_window yes
+      scrollback_lines = 2000;
+      scrollback_indicator_opacity = 0.2;
+      scrollback_fill_enlarged_window = "yes";
 
-      # Mouse
-      mouse_hide_wait 2.0
-      copy_on_select a1
-      map shift+cmd+v paste_from_buffer a1
-      focus_follows_mouse yes
+      mouse_hide_wait = 2.0;
+      copy_on_select = "a1";
+      focus_follows_mouse = "yes";
 
-      # Performance
-      sync_to_monitor yes
+      sync_to_monitor = "yes";
 
-      # Windows
-      window_border_width 10px
-      draw_minimal_borders yes
-      window_margin_width 0
-      hide_window_decorations yes
-      confirm_os_window_close 0
-      enable_audio_bell no
-      window_padding_width 0 5
+      window_border_width = "10px";
+      draw_minimal_borders = "yes";
+      window_margin_width = 0;
+      hide_window_decorations = "yes";
+      confirm_os_window_close = 0;
+      enable_audio_bell = "no";
+      window_padding_width = "0 5";
 
-      linux_display_server wayland
+      linux_display_server = "wayland";
 
-      # Colors
-      cursor #928374
-      cursor_text_color background
-      url_color #83a598
-      visual_bell_color #8ec07c
-      bell_border_color #8ec07c
+      foreground = "#000000";
+      background = "#f7f7f7";
 
-      active_border_color #d3869b
-      inactive_border_color #665c54
+      selection_foreground = "#000000";
+      selection_background = "#bfdbfe";
 
-      foreground #ebdbb2
-      background #282828
-      selection_foreground #928374
-      selection_background #ebdbb2
+      cursor = "#007acc";
+      cursor_text_color = "#bfdbfe";
 
-      active_tab_foreground #fbf1c7
-      active_tab_background #665c54
-      inactive_tab_foreground #a89984
-      inactive_tab_background #3c3836
+      url_color = "#325cc0";
 
-      color0  #665c54
-      color8  #7c6f64
-      color1  #cc241d
-      color9  #fb4934
-      color2  #98971a
-      color10 #b8bb26
-      color3  #d79921
-      color11 #fabd2f
-      color4  #458588
-      color12 #83a598
-      color5  #b16286
-      color13 #d3869b
-      color6  #689d6a
-      color14 #8ec07c
-      color7  #a89984
-      color15 #bdae93
+      active_border_color = "#777777";
+      inactive_border_color = "#cccccc";
+      bell_border_color = "#e97e57";
 
-      map ctrl+backspace send_text all \x17
-    '';
+      active_tab_foreground = "#000000";
+      active_tab_background = "#f7f7f7";
+
+      inactive_tab_foreground = "#444444";
+      inactive_tab_background = "#dedede";
+
+      color0 = "#000000";
+      color8 = "#777777";
+
+      color1 = "#aa3731";
+      color9 = "#f05050";
+
+      color2 = "#448c37";
+      color10 = "#60cb00";
+
+      color3 = "#cb9000";
+      color11 = "#ffbc5d";
+
+      color4 = "#325cc0";
+      color12 = "#007acc";
+
+      color5 = "#7a3e9d";
+      color13 = "#e64ce6";
+
+      color6 = "#0083b2";
+      color14 = "#00aacb";
+
+      color7 = "#bbbbbb";
+      color15 = "#ffffff";
+    };
   };
 
   wayland.windowManager.hyprland = {
