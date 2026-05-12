@@ -199,6 +199,7 @@
     settings = {
       exec-once = [
         "noctalia-shell"
+        "hyprctl dispatch workspace 1"
       ];
 
       monitor = [
