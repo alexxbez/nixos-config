@@ -52,6 +52,9 @@
               id = "Volume";
             }
             {
+              id = "Brightness";
+            }
+            {
               id = "ControlCenter";
             }
           ];
@@ -59,7 +62,8 @@
       };
       colorSchemes = {
         useWallpaperColors = false;
-        predefinedScheme = "Gruvbox";
+        darkMode = false;
+        predefinedScheme = "Rose Pine";
       };
     };
   };
@@ -100,7 +104,7 @@
     nil
     obs-studio
     cisco-packet-tracer_9
-    zoom
+    reaper
   ];
 
   programs.kitty = {
