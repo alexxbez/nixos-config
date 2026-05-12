@@ -323,9 +323,37 @@
         "suppress_event maximize, match:class .*"
         "no_focus on, match:class ^$, match:title ^$, match:xwayland true, match:float true, match:fullscreen false, match:pin false"
         "no_initial_focus on, match:class ^jetbrains-.*$, match:float true, match:title (^$|^\\s$|^win\\d+$)"
+
         "float true, match:title qalc-popup"
         "size 600 400, match:title qalc-popup"
         "center true, match:title qalc-popup"
+
+        # PacketTracer WindowRules
+        "no_initial_focus on, match:class PacketTracer"
+        "float on, match:class PacketTracer"
+        "no_anim on, match:class PacketTracer"
+        "no_blur on, match:class PacketTracer"
+        "no_dim on, match:class PacketTracer"
+        "no_shadow on, match:class PacketTracer"
+        "opaque on, match:class PacketTracer"
+        "immediate on, match:class PacketTracer"
+        "border_size 0, match:class PacketTracer"
+        "rounding 0, match:class PacketTracer"
+        "decorate 0, match:class PacketTracer"
+        "nearest_neighbor on, match:class PacketTracer"
+        "xray on, match:class PacketTracer"
+        "min_size 1 1, match:class PacketTracer"
+
+        "keep_aspect_ratio on, match:class PacketTracer, match:title Cisco Packet Tracer"
+        "focus_on_activate on, match:class PacketTracer, match:title Cisco Packet Tracer"
+
+        # "stayfocused, match:class PacketTracer, match:title Preference"
+
+        "min_size 486 628, match:class PacketTracer, match:title Preference"
+        "min_size 486 628, match:class PacketTracer, match:title .*outer.*"
+        "min_size 772 700, match:class PacketTracer, match:title .*witch.*"
+        "min_size 807 655, match:class PacketTracer, match:title .*PC.*"
+        "min_size 791 648, match:class PacketTracer, match:title .*Save File.*"
       ];
 
       "$mainMod" = "SUPER";
