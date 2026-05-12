@@ -100,6 +100,7 @@
     nil
     obs-studio
     cisco-packet-tracer_9
+    zoom
   ];
 
   programs.kitty = {
