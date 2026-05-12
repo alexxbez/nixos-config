@@ -119,13 +119,6 @@
     settings = {
       disable_ligatures = "cursor";
 
-      map = [
-        "ctrl+j send_text all \\x1b[B"
-        "ctrl+k send_text all \\x1b[A"
-        "shift+cmd+v paste_from_buffer a1"
-        "ctrl+backspace send_text all \\x17"
-      ];
-
       cursor_shape = "block";
       shell_integration = "no-cursor";
       cursor_shape_unfocused = "hollow";
@@ -200,6 +193,13 @@
       color7 = "#bbbbbb";
       color15 = "#ffffff";
     };
+
+    extraConfig = ''
+      map ctrl+j send_text all \x1b[B
+      map ctrl+k send_text all \x1b[A
+      map shift+cmd+v paste_from_buffer a1
+      map ctrl+backspace send_text all \x17
+    '';
   };
 
   wayland.windowManager.hyprland = {
