@@ -342,7 +342,7 @@
         }
       ];
 
-      windowrulev2 = [
+      windowrule = [
         #
         # General Rules
         #
