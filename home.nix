@@ -107,6 +107,7 @@
     cisco-packet-tracer_9
     reaper
     nyxt
+    spotify
   ];
 
   programs.kitty = {
