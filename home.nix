@@ -343,67 +343,40 @@
       ];
 
       windowrule = [
-        #
-        # General Rules
-        #
+        "suppress_event maximize, match:class .*"
+        "no_focus on, match:class ^$, match:title ^$, match:xwayland true, match:float true, match:fullscreen false, match:pin false"
+        "no_initial_focus on, match:class ^jetbrains-.*$, match:float true, match:title (^$|^\\s$|^win\\d+$)"
 
-        "suppressevent maximize, class:.*"
+        "float true, match:title qalc-popup"
+        "size 600 400, match:title qalc-popup"
+        "center true, match:title qalc-popup"
 
-        "nofocus on, class:^$, title:^$, xwayland:1, floating:1, fullscreen:0, pinned:0"
+        # PacketTracer WindowRules
+        "no_initial_focus on, match:class PacketTracer"
+        "float on, match:class PacketTracer"
+        "no_anim on, match:class PacketTracer"
+        "no_blur on, match:class PacketTracer"
+        "no_dim on, match:class PacketTracer"
+        "no_shadow on, match:class PacketTracer"
+        "opaque on, match:class PacketTracer"
+        "immediate on, match:class PacketTracer"
+        "border_size 0, match:class PacketTracer"
+        "rounding 0, match:class PacketTracer"
+        "decorate 0, match:class PacketTracer"
+        "nearest_neighbor on, match:class PacketTracer"
+        "xray on, match:class PacketTracer"
+        "min_size 1 1, match:class PacketTracer"
 
-        "noinitialfocus on, class:^(jetbrains-.*)$, floating:1, title:(^$|^\\s$|^win\\d+$)"
+        "keep_aspect_ratio on, match:class PacketTracer, match:title Cisco Packet Tracer"
+        "focus_on_activate on, match:class PacketTracer, match:title Cisco Packet Tracer"
 
-        #
-        # Qalculate Popup
-        #
+        # "stayfocused, match:class PacketTracer, match:title Preference"
 
-        "float on, title:^(qalc-popup)$"
-        "size 600 400, title:^(qalc-popup)$"
-        "center on, title:^(qalc-popup)$"
-
-        #
-        # Cisco Packet Tracer
-        #
-
-        # Main behavior
-        "float on, class:^(PacketTracer)$"
-        "center on, class:^(PacketTracer)$"
-
-        # Important for PT child windows
-        "immediate on, class:^(PacketTracer)$"
-
-        # Visual cleanup
-        "opaque on, class:^(PacketTracer)$"
-        "noblur on, class:^(PacketTracer)$"
-        "nodim on, class:^(PacketTracer)$"
-        "noshadow on, class:^(PacketTracer)$"
-
-        # Flat appearance
-        "rounding 0, class:^(PacketTracer)$"
-        "bordersize 0, class:^(PacketTracer)$"
-
-        # Focus behavior
-        "stayfocused on, class:^(PacketTracer)$"
-
-        # Preferences dialog
-        "float on, title:^(Preferences)$"
-        "center on, title:^(Preferences)$"
-        "size 486 628, title:^(Preferences)$"
-
-        # Save dialogs
-        "float on, title:^(Save File.*)$"
-        "center on, title:^(Save File.*)$"
-        "size 791 648, title:^(Save File.*)$"
-
-        # Device windows
-        "float on, title:^(Switch.*)$"
-        "float on, title:^(Router.*)$"
-        "float on, title:^(PC.*)$"
-        "float on, title:^(Laptop.*)$"
-        "float on, title:^(Server.*)$"
-
-        # Main PT window size
-        "size 1200 800, title:^(Cisco Packet Tracer)$"
+        "min_size 486 628, match:class PacketTracer, match:title Preference"
+        "min_size 486 628, match:class PacketTracer, match:title .*outer.*"
+        "min_size 772 700, match:class PacketTracer, match:title .*witch.*"
+        "min_size 807 655, match:class PacketTracer, match:title .*PC.*"
+        "min_size 791 648, match:class PacketTracer, match:title .*Save File.*"
       ];
 
       "$mainMod" = "SUPER";
