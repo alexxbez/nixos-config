@@ -66,31 +66,6 @@
         predefinedScheme = "Monochrome";
       };
     };
-
-    plugins = {
-      version = 2;
-
-      sources = [
-        {
-          enabled = true;
-          name = "Official Noctalia Plugins";
-          url = "https://github.com/noctalia-dev/noctalia-plugins";
-        }
-
-        {
-          enabled = true;
-          name = "Community Palettes";
-          url = "https://github.com/noctalia-dev/community-palettes";
-        }
-      ];
-
-      states = {
-        monochrome = {
-          enabled = true;
-          sourceUrl = "https://github.com/noctalia-dev/community-palettes";
-        };
-      };
-    };
   };
 
   home.file."cache/noctalia/wallpapers.json" = {
