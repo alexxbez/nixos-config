@@ -109,6 +109,9 @@
     nyxt
     spotify
     hyprshot
+    javaPackages.compiler.openjdk21
+    leiningen
+    jetbrains.idea
   ];
 
   programs.kitty = {
