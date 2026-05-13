@@ -106,6 +106,7 @@
     obs-studio
     cisco-packet-tracer_9
     reaper
+    nyxt
   ];
 
   programs.kitty = {
