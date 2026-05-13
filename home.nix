@@ -108,7 +108,7 @@
     reaper
     nyxt
     spotify
-    flameshot
+    hyprshot
   ];
 
   programs.kitty = {
