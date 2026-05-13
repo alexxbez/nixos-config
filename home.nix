@@ -62,7 +62,7 @@
       };
       colorSchemes = {
         useWallpaperColors = false;
-        darkMode = false;
+        darkMode = true;
         predefinedScheme = "Monochrome";
       };
     };
