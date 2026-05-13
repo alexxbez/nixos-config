@@ -389,6 +389,7 @@
         "$mainMod, space, exec, noctalia-shell ipc call launcher toggle"
         "$mainMod, C, exec, kitty --title qalc-popup qalc"
         "$mainMod, Tab, cyclenext"
+        "$mainMod, Tab, bringactivetotop"
         "$mainMod, h, movefocus, l"
         "$mainMod, l, movefocus, r"
         "$mainMod, k, movefocus, u"
