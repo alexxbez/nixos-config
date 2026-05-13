@@ -148,50 +148,67 @@
 
       linux_display_server = "wayland";
 
-      foreground = "#000000";
-      background = "#f7f7f7";
+      foreground = "#a1aab5";
+      background = "#1d262f";
 
-      selection_foreground = "#000000";
-      selection_background = "#bfdbfe";
+      selection_foreground = "#a1aab5";
+      selection_background = "#27323f";
 
-      cursor = "#007acc";
-      cursor_text_color = "#bfdbfe";
+      cursor = "#067953";
+      cursor_text_color = "#1d262f";
 
-      url_color = "#325cc0";
+      url_color = "#afd4fe";
 
-      active_border_color = "#777777";
-      inactive_border_color = "#cccccc";
-      bell_border_color = "#e97e57";
+      active_border_color = "#405368";
+      inactive_border_color = "#1d262f";
 
-      active_tab_foreground = "#000000";
-      active_tab_background = "#f7f7f7";
+      bell_border_color = "#004a9e";
+      visual_bell_color = "none";
 
-      inactive_tab_foreground = "#444444";
-      inactive_tab_background = "#dedede";
+      wayland_titlebar_color = "#27323f";
+      macos_titlebar_color = "#27323f";
 
-      color0 = "#000000";
-      color8 = "#777777";
+      active_tab_foreground = "#f9fbfa";
+      active_tab_background = "#1d262f";
 
-      color1 = "#aa3731";
-      color9 = "#f05050";
+      inactive_tab_foreground = "#a6b0ad";
+      inactive_tab_background = "#27323f";
 
-      color2 = "#448c37";
-      color10 = "#60cb00";
+      tab_bar_background = "#27323f";
+      tab_bar_margin_color = "none";
 
-      color3 = "#cb9000";
-      color11 = "#ffbc5d";
+      mark1_foreground = "#1d262f";
+      mark1_background = "#1757a1";
 
-      color4 = "#325cc0";
-      color12 = "#007acc";
+      mark2_foreground = "#1d262f";
+      mark2_background = "#818d89";
 
-      color5 = "#7a3e9d";
-      color13 = "#e64ce6";
+      mark3_foreground = "#1d262f";
+      mark3_background = "#088c60";
 
-      color6 = "#0083b2";
-      color14 = "#00aacb";
+      color0 = "#1d262f";
+      color8 = "#4a5f78";
 
-      color7 = "#bbbbbb";
-      color15 = "#ffffff";
+      color1 = "#34659d";
+      color9 = "#14e19d";
+
+      color2 = "#0fc78a";
+      color10 = "#27323f";
+
+      color3 = "#47ebb4";
+      color11 = "#405368";
+
+      color4 = "#57718e";
+      color12 = "#738191";
+
+      color5 = "#0fc78a";
+      color13 = "#afd4fe";
+
+      color6 = "#6e9bcf";
+      color14 = "#0db57d";
+
+      color7 = "#a1aab5";
+      color15 = "#ebf4ff";
     };
 
     extraConfig = ''
