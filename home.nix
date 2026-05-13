@@ -63,7 +63,7 @@
       colorSchemes = {
         useWallpaperColors = false;
         darkMode = false;
-        predefinedScheme = "Rose Pine";
+        predefinedScheme = "Monochrome";
       };
     };
   };
