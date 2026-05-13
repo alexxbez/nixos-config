@@ -349,58 +349,63 @@
 
         "suppressevent maximize, class:.*"
 
-        "nofocus, class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        "nofocus on, class:^$, title:^$, xwayland:1, floating:1, fullscreen:0, pinned:0"
 
-        "noinitialfocus, class:^(jetbrains-.*)$,floating:1,title:(^$|^\\s$|^win\\d+$)"
+        "noinitialfocus on, class:^(jetbrains-.*)$, floating:1, title:(^$|^\\s$|^win\\d+$)"
 
         #
         # Qalculate Popup
         #
 
-        "float, title:^(qalc-popup)$"
+        "float on, title:^(qalc-popup)$"
         "size 600 400, title:^(qalc-popup)$"
-        "center, title:^(qalc-popup)$"
+        "center on, title:^(qalc-popup)$"
 
         #
         # Cisco Packet Tracer
         #
 
         # Main behavior
-        "float, class:^(PacketTracer)$"
-        "center, class:^(PacketTracer)$"
+        "float on, class:^(PacketTracer)$"
+        "center on, class:^(PacketTracer)$"
+
+        # Important for PT child windows
+        "immediate on, class:^(PacketTracer)$"
 
         # Visual cleanup
-        "opaque, class:^(PacketTracer)$"
-        "noblur, class:^(PacketTracer)$"
-        "nodim, class:^(PacketTracer)$"
-        "noshadow, class:^(PacketTracer)$"
+        "opaque on, class:^(PacketTracer)$"
+        "noblur on, class:^(PacketTracer)$"
+        "nodim on, class:^(PacketTracer)$"
+        "noshadow on, class:^(PacketTracer)$"
 
-        # Keep PT looking flat/native
+        # Flat appearance
         "rounding 0, class:^(PacketTracer)$"
         "bordersize 0, class:^(PacketTracer)$"
 
-        # Better interaction/focus behavior
-        "stayfocused, class:^(PacketTracer)$"
+        # Focus behavior
+        "stayfocused on, class:^(PacketTracer)$"
 
         # Preferences dialog
-        "float, title:^(Preferences)$"
-        "center, title:^(Preferences)$"
+        "float on, title:^(Preferences)$"
+        "center on, title:^(Preferences)$"
         "size 486 628, title:^(Preferences)$"
 
         # Save dialogs
-        "float, title:^(Save File.*)$"
-        "center, title:^(Save File.*)$"
+        "float on, title:^(Save File.*)$"
+        "center on, title:^(Save File.*)$"
         "size 791 648, title:^(Save File.*)$"
 
         # Device windows
-        "float, title:^(Switch.*)$"
-        "float, title:^(Router.*)$"
-        "float, title:^(PC.*)$"
-        "float, title:^(Laptop.*)$"
-        "float, title:^(Server.*)$"
+        "float on, title:^(Switch.*)$"
+        "float on, title:^(Router.*)$"
+        "float on, title:^(PC.*)$"
+        "float on, title:^(Laptop.*)$"
+        "float on, title:^(Server.*)$"
 
+        # Main PT window size
         "size 1200 800, title:^(Cisco Packet Tracer)$"
       ];
+
       "$mainMod" = "SUPER";
 
       bind = [
