@@ -112,6 +112,8 @@
     javaPackages.compiler.openjdk21
     leiningen
     jetbrains.idea
+    obsidian
+    kmonad
   ];
 
   programs.kitty = {
