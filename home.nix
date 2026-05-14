@@ -88,6 +88,7 @@
     git
     fzf
     gcc
+    clang-tools
     nodejs
     typescript
     typescript-language-server
