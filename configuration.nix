@@ -118,6 +118,8 @@
     extraGroups = [
       "wheel"
       "docker"
+      "input"
+      "uinput"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
     packages = with pkgs; [
