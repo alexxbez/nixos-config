@@ -200,7 +200,7 @@
   environment.etc."kmonad/main.kbd".text = ''
     (defcfg
       ;; if this ever breaks, use 'sudo evtest'
-      input  (device-file "/dev/input/by-id/usb-ASUSTek_Computer_Inc._N-KEY_Device-event-kbd")
+      input  (device-file "/dev/input/by-id/usb-ASUSTek_Computer_Inc._N-KEY_Device-event-mouse")
       output (uinput-sink "KMonad Virtual Keyboard")
       fallthrough true
       allow-cmd false
