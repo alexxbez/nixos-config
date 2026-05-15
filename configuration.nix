@@ -107,7 +107,11 @@
     pulse.enable = true;
     alsa.enable = true;
     wireplumber.enable = true;
+
+    jack.enable = true;
   };
+
+  security.rtkit.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -120,6 +124,7 @@
       "docker"
       "input"
       "uinput"
+      "audio"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
     packages = with pkgs; [
@@ -162,6 +167,8 @@
     fontconfig
     freetype
     nss
+
+    pipewire.jack
   ];
 
   virtualisation.docker = {
