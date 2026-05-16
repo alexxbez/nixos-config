@@ -13,10 +13,27 @@
 ;; Use y/n instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; Packages installed by Nix are configured with use-package
-;;
-;; Example:
-;;
-;; (use-package vertico
-;;   :init
-;;   (vertico-mode))
+;; Fonts
+(set-face-attribute 'default nil
+                    :font "JetBrainsMono Nerd Font"
+                    :height 100)
+;; Autosave and backup
+
+;; Store backup files in ~/.config/emacs/backups
+(setq backup-directory-alist
+      `(("." . "~/.config/emacs/backups")))
+
+;; Store autosave files in ~/.config/emacs/autosaves
+(setq auto-save-file-name-transforms
+      `((".*" "~/.config/emacs/autosaves/" t)))
+
+(setq create-lockfiles nil)
+
+;; Packages
+(require 'use-package)
+
+;; Theme
+(use-package base16-theme)
+(load-theme 'base16-black-metal-marduk t)
+
+(font-family-list)
