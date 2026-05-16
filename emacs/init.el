@@ -5,7 +5,10 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(set-fringe-mode 5)
+(tooltip-mode -1)
 
+(setq visible-bell t)
 ;; Better defaults
 (setq inhibit-startup-screen t)
 (setq ring-bell-function 'ignore)
@@ -15,8 +18,10 @@
 
 ;; Fonts
 (set-face-attribute 'default nil
-                    :font "JetBrainsMono Nerd Font"
-                    :height 100)
+                    :family "JetBrainsMono Nerd Font"
+                    :height 100
+                    :weight 'semi-bold
+                    :width 'expanded)
 ;; Autosave and backup
 
 ;; Store backup files in ~/.config/emacs/backups
@@ -34,6 +39,53 @@
 
 ;; Theme
 (use-package base16-theme)
-(load-theme 'base16-black-metal-marduk t)
+(load-theme 'base16-black-metal-gorgoroth t)
 
-(font-family-list)
+;; Main background / foreground
+(set-face-attribute 'default nil
+                    :background "#191919"
+                    :foreground "#bbbbbb")
+
+;; Fringe / gutter
+(set-face-background 'fringe "#191919")
+
+;; Region selection
+(set-face-background 'region "#404040")
+(set-face-foreground 'region "#191919")
+
+;; Comments
+(set-face-attribute 'font-lock-comment-face nil
+                    :foreground "#6f6a69"
+                    :slant 'italic)
+
+;; Cursor
+(set-cursor-color "#c9c9c9")
+
+;; Line spacing
+(setq-default line-spacing 0.15)
+
+;; Paredit
+(use-package paredit
+  :hook ((emacs-lisp-mode
+          lisp-mode
+          lisp-interaction-mode
+          scheme-mode
+          clojure-mode) . paredit-mode))
+
+(use-package ivy
+  :diminish
+  :bind (("C-s" . swiper)
+	 :map ivy-minibuffer-map
+	 ("TAB" . ivy-alt-done)
+	 ("C-l" . ivy-alt-done)
+	 ("C-j" . ivy-next-line)
+	 ("C-k" . ivy-previous-line)
+	 :map ivy-switch-buffer-map
+	 ("C-k" . ivy-previous-line)
+	 ("C-l" . ivy.done)
+	 ("C-d" . ivy-switch-buffer-kill)
+	 :map ivy-reverse-i-search-map
+	 ("C-k" . ivy-previous-line)
+	 ("C-d" . ivy-reverse-i-search-kill))
+  :config
+  (ivy-mode 1))
