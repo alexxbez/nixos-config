@@ -12,8 +12,9 @@
       epkgs: with epkgs; [
         use-package
         base16-theme
-	ivy
-	paredit
+        ivy
+        paredit
+        counsel
       ];
   };
 
