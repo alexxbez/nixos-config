@@ -21,6 +21,28 @@
                     :family "JetBrainsMono Nerd Font"
                     :height 100
                     :weight 'semi-bold)
+
+(use-package ligature
+  :config
+  ;; Enable ligatures in programming modes
+  (ligature-set-ligatures
+   'prog-mode
+   '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\"
+     "{-" "[]" "::" ":::" ":=" "!!" "!=" "!==" "-}"
+     "--" "---" "-->" "->" "->>" "-<" "-<<" "-~"
+     "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+     ".-" ".=" ".." "..<" "..." "?=" "??" ";;"
+     "/*" "/**" "/=" "/==" "/>" "//" "///"
+     "&&" "||" "||=" "|=" "|>" "^="
+     "++" "+++" "+>"
+     "==" "===" "==>" "=>" "=>>"
+     "<=" "<==" "<=>" "<>" "<<" "<<-" "<<<"
+     "<~" "<~~" "</" "</>"
+     "~@" "~-" "~=" "~>" "~~"))
+
+  (global-ligature-mode t))
+
+
 ;; Autosave and backup
 
 ;; Store backup files in ~/.config/emacs/backups

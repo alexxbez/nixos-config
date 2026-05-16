@@ -14,8 +14,9 @@
         base16-theme
         ivy
         paredit
-	counsel
-	mood-line
+        counsel
+        mood-line
+        ligature
       ];
   };
 
