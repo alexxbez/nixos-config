@@ -55,6 +55,29 @@
 
 (setq create-lockfiles nil)
 
+;; Line numbers
+(column-number-mode)
+(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-current-absolute t)
+(setq display-line-numbers-width 4)
+(setq display-line-numbers-grow-only t)
+
+(global-display-line-numbers-mode t)
+
+(dolist (mode '(term-mode-hook
+		eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+
+(set-face-attribute 'line-number nil
+                    :background "#191919"
+                    :foreground "#3d3839"
+                    :weight 'regular)
+
+(set-face-attribute 'line-number-current-line nil
+                    :background "#191919"
+                    :foreground "#8e8e8e"
+                    :weight 'medium)
+
 ;; Packages
 (require 'use-package)
 
@@ -128,3 +151,8 @@
   :config
   (setq ivy-initial-inputs-alist nil)) ;; so it doesn't start searches with "^"
 
+(use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 0.3))

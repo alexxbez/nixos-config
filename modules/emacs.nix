@@ -17,6 +17,7 @@
         counsel
         mood-line
         ligature
+        which-key
       ];
   };
 
