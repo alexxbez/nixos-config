@@ -13,6 +13,7 @@
         use-package
         base16-theme
         ivy
+        ivy-rich
         paredit
         counsel
         mood-line

@@ -78,6 +78,11 @@
                     :foreground "#8e8e8e"
                     :weight 'medium)
 
+;; Scrolling
+(setq scroll-margin 10)
+(setq scroll-conservatively 101) ;; don't jump cursor
+(setq scroll-step 1)
+
 ;; Packages
 (require 'use-package)
 
@@ -140,6 +145,10 @@
 	 ("C-d" . ivy-reverse-i-search-kill))
   :config
   (ivy-mode 1))
+
+ (use-package ivy-rich
+   :init
+   (ivy-rich-mode 1))
 
 ;; Counsel
 (use-package counsel
