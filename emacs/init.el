@@ -20,8 +20,7 @@
 (set-face-attribute 'default nil
                     :family "JetBrainsMono Nerd Font"
                     :height 100
-                    :weight 'semi-bold
-                    :width 'expanded)
+                    :weight 'semi-bold)
 ;; Autosave and backup
 
 ;; Store backup files in ~/.config/emacs/backups
@@ -64,6 +63,12 @@
 ;; Line spacing
 (setq-default line-spacing 0.15)
 
+;; Mode line => Mood-line
+(use-package mood-line
+  :config
+  (setq mood-line-glyph-alist mood-line-glyphs-unicode)
+  (mood-line-mode))
+
 ;; Paredit
 (use-package paredit
   :hook ((emacs-lisp-mode
@@ -99,4 +104,5 @@
 	 :map minibuffer-local-map
 	 ("C-r" . 'counsel-minibuffer-history))
   :config
-  (setq ivy-initial-inputs-alist nil)) ;; so it doesn't start searches with ^
+  (setq ivy-initial-inputs-alist nil)) ;; so it doesn't start searches with "^"
+

@@ -14,7 +14,8 @@
         base16-theme
         ivy
         paredit
-        counsel
+	counsel
+	mood-line
       ];
   };
 
