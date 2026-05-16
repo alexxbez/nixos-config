@@ -12,6 +12,7 @@
 
   imports = [
     inputs.noctalia.homeModules.default
+    ./modules/emacs.nix
   ];
 
   programs.noctalia-shell = {
