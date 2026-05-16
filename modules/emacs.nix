@@ -10,10 +10,8 @@
     # Nix-managed Emacs packages go here
     extraPackages =
       epkgs: with epkgs; [
-        # example:
-        # vertico
-        # consult
-        # magit
+        use-package
+        base16-theme
       ];
   };
 
