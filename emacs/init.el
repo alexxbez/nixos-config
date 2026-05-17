@@ -240,4 +240,33 @@
   :config
   (evil-commentary-mode))
 
+(use-package undo-tree
+  :init
+  (global-undo-tree-mode)
 
+  :custom
+  (undo-tree-auto-save-history nil))
+
+(setq evil-undo-system 'undo-tree)
+
+(use-package general
+  :config
+  (general-create-definer my/leader-keys
+			  :states '(normal insert visual emacs)
+			  :keymaps 'override
+			  :prefix "SPC"
+			  :global-prefix "C-SPC"))
+
+(my/leader-keys
+  "f"  '(:ignore t :which-key "files")
+  "ff" '(counsel-dired :which-key "find file")
+  "fs" '(save-buffer :which-key "save")
+
+  "b"  '(:ignore t :which-key "buffers")
+  "bb" '(counsel-switch-buffer :which-key "switch buffer")
+  "bk" '(kill-current-buffer :which-key "kill buffer")
+
+  "w"  '(:ignore t :which-key "windows")
+  "wv" '(split-window-right :which-key "vertical split")
+  "ws" '(split-window-below :which-key "horizontal split")
+  "wd" '(delete-window :which-key "delete"))

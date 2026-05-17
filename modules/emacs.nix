@@ -25,6 +25,8 @@
         evil-collection
         evil-surround
         evil-commentary
+        undo-tree
+        general
       ];
   };
 
