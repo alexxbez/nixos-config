@@ -16,6 +16,8 @@
 ;; Use y/n instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
 ;; Fonts
 (set-face-attribute 'default nil
                     :family "JetBrainsMono Nerd Font"
@@ -127,6 +129,10 @@
           scheme-mode
           clojure-mode) . paredit-mode))
 
+(use-package enhanced-evil-paredit
+  :commands enhanced-evil-paredit-mode
+  :hook (paredit-mode . enhanced-evil-paredit-mode))
+
 ;; Ivy
 (use-package ivy
   :diminish
@@ -161,12 +167,14 @@
   :config
   (setq ivy-initial-inputs-alist nil)) ;; so it doesn't start searches with "^"
 
+;; Which key
 (use-package which-key
   :init (which-key-mode)
   :diminish which-key-mode
   :config
   (setq which-key-idle-delay 0.3))
 
+;; Helpful for better docs
 (use-package helpful
   :custom
   (counsel-describe-function-function #'helpful-callable)
@@ -176,3 +184,60 @@
   ([remap describe-command] . helpful-command)
   ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
+
+;; Evil mode
+(use-package evil
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-i-jump nil)
+
+  :config
+  (evil-mode 1)
+
+  ;; Escape insert mode
+  (define-key evil-insert-state-map (kbd "C-g")
+              #'evil-normal-state)
+
+  ;; Better backspace behavior
+  (define-key evil-insert-state-map (kbd "C-h")
+              #'evil-delete-backward-char-and-join)
+
+  ;; Visual line motions
+  (evil-global-set-key 'motion "j"
+                       #'evil-next-visual-line)
+
+  (evil-global-set-key 'motion "k"
+                       #'evil-previous-visual-line)
+
+  ;; Arrow keys follow visual lines too
+  (evil-global-set-key 'motion (kbd "<down>")
+                       #'evil-next-visual-line)
+
+  (evil-global-set-key 'motion (kbd "<up>")
+                       #'evil-previous-visual-line))
+
+;; Modes where evil should not interfere
+(dolist (mode '(term-mode
+                vterm-mode
+                eshell-mode
+                shell-mode
+                inferior-python-mode
+                messages-buffer-mode))
+  (evil-set-initial-state mode 'emacs))
+
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
+
+(use-package evil-surround
+  :config
+  (global-evil-surround-mode 1))
+
+(use-package evil-commentary
+  :config
+  (evil-commentary-mode))
+
+

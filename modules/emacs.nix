@@ -15,11 +15,16 @@
         ivy
         ivy-rich
         paredit
+        enhanced-evil-paredit
         counsel
         mood-line
         ligature
         which-key
 	helpful
+        evil
+        evil-collection
+        evil-surround
+        evil-commentary
       ];
   };
 
