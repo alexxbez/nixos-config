@@ -19,6 +19,7 @@
         mood-line
         ligature
         which-key
+	helpful
       ];
   };
 
