@@ -492,6 +492,14 @@
     interactiveShellInit = ''
       set -gx LD_LIBRARY_PATH /run/current-system/sw/share/nix-ld/lib $LD_LIBRARY_PATH
     '';
+    initExtra = ''
+       functions --copy fish_prompt vterm_old_fish_prompt
+
+       function fish_prompt
+           printf '\e]51;A%s\e\\' (pwd)
+           vterm_old_fish_prompt
+       end
+    ''
   };
 
   programs.zsh = {

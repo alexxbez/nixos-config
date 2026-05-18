@@ -254,7 +254,8 @@
 (use-package vterm
   :commands vterm
   :config
-  (setq vterm-max-scrollback 10000))
+  (setq vterm-max-scrollback 10000)
+  (setq vterm-shell "/etc/profiles/per-user/alexx/bin/fish"))
 
 ;; Don't use evil within vterm
 (evil-set-initial-state 'vterm-mode 'emacs)
