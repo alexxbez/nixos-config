@@ -504,3 +504,6 @@
 
 (use-package rust-mode)
 
+(use-package eldoc-box
+  :config
+  (eldoc-box-hover-mode))

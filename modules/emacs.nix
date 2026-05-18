@@ -33,6 +33,7 @@
         org-bullets
         visual-fill-column
         corfu
+        eldoc-box
 
         cuda-mode
         rust-mode
