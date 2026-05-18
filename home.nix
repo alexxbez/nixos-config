@@ -85,6 +85,7 @@
     gnumake
     nerd-fonts.hasklug
     nerd-fonts.jetbrains-mono
+    libertinus
     kitty
     git
     fzf
