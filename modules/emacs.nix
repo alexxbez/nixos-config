@@ -32,6 +32,7 @@
         org
         org-bullets
         visual-fill-column
+        corfu
       ];
   };
 
