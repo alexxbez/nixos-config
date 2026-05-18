@@ -35,6 +35,7 @@
         corfu
 
         cuda-mode
+        rust-mode
       ];
   };
 

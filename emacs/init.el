@@ -497,5 +497,10 @@
   (read-extended-command-predicate #'command-completion-default-include-p))
 
 (use-package eglot
-  :hook ((c-mode c++-mode cuda-mode) . eglot-ensure))
+  :hook
+  ((c-mode c++-mode cuda-mode) . eglot-ensure)
+  (rust-mode . eglot-ensure)
+  )
+
+(use-package rust-mode)
 
