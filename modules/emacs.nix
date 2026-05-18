@@ -30,6 +30,7 @@
         general
         vterm
         org
+        org-bullets
       ];
   };
 
