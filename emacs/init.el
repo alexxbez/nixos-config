@@ -26,8 +26,8 @@
 
 ;; Proportional font for prose
 (set-face-attribute 'variable-pitch nil
-                    :family "Cantarell"
-                    :height 100
+                    :family "Libertinus Serif Display"
+                    :height 120
                     :weight 'regular)
 
 ;; Monospace
@@ -396,7 +396,6 @@
   :hook (org-mode . my/org-mode-setup)
   :config
   (setq org-ellipsis " ")
-  (setq org-hide-emphasis-markers t)
 
   ;; Replace list hyphen with dot
   (font-lock-add-keywords
@@ -444,3 +443,10 @@
 (use-package org-bullets
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+(use-package visual-fill-column)
+
+(add-hook 'org-mode-hook #'visual-fill-column-mode)
+
+(setq visual-fill-column-width 100)
+(setq visual-fill-column-center-text t)

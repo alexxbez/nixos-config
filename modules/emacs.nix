@@ -31,6 +31,7 @@
         vterm
         org
         org-bullets
+        visual-fill-column
       ];
   };
 
