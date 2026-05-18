@@ -28,6 +28,7 @@
         undo-tree
         general
         vterm
+        org-mode
       ];
   };
 

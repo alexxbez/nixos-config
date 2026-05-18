@@ -219,6 +219,16 @@
   (evil-global-set-key 'motion (kbd "<up>")
                        #'evil-previous-visual-line))
 
+;; Prevent :q from exiting emacs
+(defun my/evil-write-and-close ()
+  "Save current buffer and kill it."
+  (interactive)
+  (save-buffer)
+  (kill-current-buffer))
+
+(evil-ex-define-cmd "wq" #'my/evil-write-and-close)
+(evil-ex-define-cmd "q" #'kill-current-buffer)
+
 ;; Modes where evil should not interfere
 (dolist (mode '(term-mode
                 vterm-mode
@@ -335,7 +345,7 @@
 
   "b"  '(:ignore t :which-key "buffers")
   "bb" '(counsel-switch-buffer :which-key "switch buffer")
-  "bk" '(kill-current-buffer :which-key "kill buffer")
+  "bd" '(kill-current-buffer :which-key "kill buffer")
 
   "w"  '(:ignore t :which-key "windows")
   "wv" '(split-window-right :which-key "vertical split")
@@ -351,6 +361,7 @@
   "w<down>" '(windmove-down :which-key "down")
 
   "t"  '(:ignore t :which-key "terminal")
+  "tt" '(vterm :which-key "open")
   "tv" '(my/vterm-split-right
          :which-key "vterm vertical")
   "ts" '(my/vterm-split-below
@@ -359,3 +370,5 @@
          :which-key "delete window")
   "t." '(my/dired-here :which-key "dired here"))
 
+;; Org mode
+(use-package org)
