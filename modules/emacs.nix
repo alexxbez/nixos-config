@@ -20,7 +20,7 @@
         mood-line
         ligature
         which-key
-	helpful
+        helpful
         evil
         evil-collection
         evil-surround
@@ -28,7 +28,7 @@
         undo-tree
         general
         vterm
-        org-mode
+        org
       ];
   };
 
