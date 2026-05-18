@@ -505,5 +505,4 @@
 (use-package rust-mode)
 
 (use-package eldoc-box
-  :config
-  (eldoc-box-hover-mode))
+  :hook (eglot-managed-mode . eldoc-box-hover-mode))
