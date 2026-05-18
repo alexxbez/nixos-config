@@ -249,17 +249,79 @@
 
 (setq evil-undo-system 'undo-tree)
 
+;; Vterm
+(use-package vterm
+  :commands vterm
+  :config
+  (setq vterm-max-scrollback 10000))
+
+;; Don't use evil within vterm
+(evil-set-initial-state 'vterm-mode 'emacs)
+
+;; Buffer naming for vterm
+(defvar my/vterm-counter 0)
+
+(defun my/new-vterm-buffer-name ()
+  (setq my/vterm-counter (1+ my/vterm-counter))
+  (format "*vterm:%d*" my/vterm-counter))
+
+(defun my/vterm-split-right ()
+  (interactive)
+  (let ((buffer (generate-new-buffer
+                 (my/new-vterm-buffer-name))))
+    (split-window-right)
+    (other-window 1)
+
+    (vterm buffer)
+
+    ;; tie buffer lifecycle to window
+    (set-window-parameter
+     (selected-window)
+     'my/vterm-buffer
+     buffer)))
+
+(defun my/vterm-split-below ()
+  (interactive)
+  (let ((buffer (generate-new-buffer
+                 (my/new-vterm-buffer-name))))
+    (split-window-below)
+    (other-window 1)
+
+    (vterm buffer)
+
+    (set-window-parameter
+     (selected-window)
+     'my/vterm-buffer
+     buffer)))
+
+(defun my/delete-window ()
+  (interactive)
+
+  (let* ((window (selected-window))
+         (buffer (window-parameter
+                  window
+                  'my/vterm-buffer)))
+
+    (delete-window window)
+
+    ;; only kill vterm buffers we created
+    (when (and buffer
+               (buffer-live-p buffer))
+      (kill-buffer buffer))))
+
+;; General
 (use-package general
   :config
   (general-create-definer my/leader-keys
-			  :states '(normal insert visual emacs)
-			  :keymaps 'override
-			  :prefix "SPC"
-			  :global-prefix "C-SPC"))
-
+    :states '(normal insert visual emacs)
+    :keymaps 'override
+    :prefix "SPC"
+    :global-prefix "C-SPC"))
+;; Leader key bindings
 (my/leader-keys
   "f"  '(:ignore t :which-key "files")
-  "ff" '(counsel-dired :which-key "find file")
+  "fd" '(counsel-dired :which-key "dired")
+  "ff" '(counsel-find-file :which-key "find file")
   "fs" '(save-buffer :which-key "save")
 
   "b"  '(:ignore t :which-key "buffers")
@@ -269,4 +331,16 @@
   "w"  '(:ignore t :which-key "windows")
   "wv" '(split-window-right :which-key "vertical split")
   "ws" '(split-window-below :which-key "horizontal split")
-  "wd" '(delete-window :which-key "delete"))
+  "wd" '(delete-window :which-key "delete")
+  "wh" '(windmove-left :which-key "left")
+  "wl" '(windmove-right :which-key "right")
+  "wk" '(windmove-up :which-key "up")
+  "wj" '(windmove-down :which-key "down")
+
+  "t"  '(:ignore t :which-key "terminal")
+  "tv" '(my/vterm-split-right
+         :which-key "vterm vertical")
+  "ts" '(my/vterm-split-below
+         :which-key "vterm horizontal")
+  "td" '(my/delete-window
+         :which-key "delete window"))

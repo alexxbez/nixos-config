@@ -27,6 +27,7 @@
         evil-commentary
         undo-tree
         general
+        vterm
       ];
   };
 
