@@ -26,7 +26,7 @@
 
 ;; Proportional font for prose
 (set-face-attribute 'variable-pitch nil
-                    :family "Libertinus Serif Display"
+                    :family "EB Garamond"
                     :height 120
                     :weight 'regular)
 
@@ -412,10 +412,10 @@
    'user
 
    ;; headings
-   '(org-level-1 ((t (:height 1.3 :weight bold))))
-   '(org-level-2 ((t (:height 1.2 :weight bold))))
-   '(org-level-3 ((t (:height 1.1 :weight semi-bold))))
-   '(org-level-4 ((t (:height 1.05 :weight semi-bold))))
+   '(org-level-1 ((t (:height 1.4 :weight bold))))
+   '(org-level-2 ((t (:height 1.3 :weight bold))))
+   '(org-level-3 ((t (:height 1.2 :weight semi-bold))))
+   '(org-level-4 ((t (:height 1.15 :weight semi-bold))))
 
    ;; document title
    '(org-document-title
@@ -438,7 +438,9 @@
   (variable-pitch-mode 1)
 
   ;; no line numbers in org
-  (display-line-numbers-mode 0))
+  (display-line-numbers-mode 0)
+  (setq-local visual-fill-column-width 100)
+  (setq-local visual-fill-column-center-text t))
 
 (use-package org-bullets
   :config
@@ -446,7 +448,3 @@
 
 (use-package visual-fill-column)
 
-(add-hook 'org-mode-hook #'visual-fill-column-mode)
-
-(setq visual-fill-column-width 100)
-(setq visual-fill-column-center-text t)

@@ -86,6 +86,7 @@
     nerd-fonts.hasklug
     nerd-fonts.jetbrains-mono
     libertinus
+    eb-garamond
     kitty
     git
     fzf
