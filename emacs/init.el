@@ -22,7 +22,7 @@
 (set-face-attribute 'default nil
                     :family "JetBrainsMono Nerd Font"
                     :height 100
-                    :weight 'semi-bold)
+                    :weight 'medium)
 
 (use-package ligature
   :config
@@ -91,21 +91,21 @@
 
 ;; Theme
 (use-package base16-theme)
-(load-theme 'base16-black-metal-gorgoroth t)
+(load-theme 'base16-gruvbox-material-light-soft t)
+;; (load-theme 'base16-black-metal-gorgoroth t)
 
 ;; Alternative theme
 ;; (use-package alabaster-themes
-;;   :ensure t
-;;   :config
+;;     :config
 ;;   ;; Load the light theme
 ;;   (load-theme 'alabaster-themes-light t)
 ;;   ;; Interactively select a theme
 ;;   :commands (alabaster-themes-select))
 
-;; Main background / foreground
-(set-face-attribute 'default nil
-                    :background "#191919"
-                    :foreground "#bbbbbb")
+;; ;; Main background / foreground
+;; (set-face-attribute 'default nil
+;;                     :background "#191919"
+;;                     :foreground "#bbbbbb")
 
 ;; Fringe / gutter
 (set-face-background 'fringe "#191919")
