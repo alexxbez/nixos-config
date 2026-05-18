@@ -12,6 +12,7 @@
       epkgs: with epkgs; [
         use-package
         base16-theme
+        alabaster-themes
         ivy
         ivy-rich
         paredit

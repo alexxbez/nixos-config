@@ -93,6 +93,15 @@
 (use-package base16-theme)
 (load-theme 'base16-black-metal-gorgoroth t)
 
+;; Alternative theme
+;; (use-package alabaster-themes
+;;   :ensure t
+;;   :config
+;;   ;; Load the light theme
+;;   (load-theme 'alabaster-themes-light t)
+;;   ;; Interactively select a theme
+;;   :commands (alabaster-themes-select))
+
 ;; Main background / foreground
 (set-face-attribute 'default nil
                     :background "#191919"
@@ -371,4 +380,6 @@
   "t." '(my/dired-here :which-key "dired here"))
 
 ;; Org mode
-(use-package org)
+(use-package org
+  :config
+  (setq org-ellipsis " "))
