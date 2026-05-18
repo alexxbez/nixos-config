@@ -24,6 +24,18 @@
                     :height 100
                     :weight 'medium)
 
+;; Proportional font for prose
+(set-face-attribute 'variable-pitch nil
+                    :family "Cantarell"
+                    :height 100
+                    :weight 'regular)
+
+;; Monospace
+(set-face-attribute 'fixed-pitch nil
+                    :family "JetBrainsMono Nerd Font"
+                    :height 100
+                    :weight 'medium)
+
 (use-package ligature
   :config
   ;; Enable ligatures in programming modes
@@ -379,7 +391,56 @@
          :which-key "delete window")
   "t." '(my/dired-here :which-key "dired here"))
 
-;; Org mode
+;; Org mode appearance
 (use-package org
+  :hook (org-mode . my/org-mode-setup)
   :config
-  (setq org-ellipsis " "))
+  (setq org-ellipsis " ")
+  (setq org-hide-emphasis-markers t)
+
+  ;; Replace list hyphen with dot
+  (font-lock-add-keywords
+   'org-mode
+   '(("^ *\\([-]\\) "
+      (0 (prog1 ()
+           (compose-region
+            (match-beginning 1)
+            (match-end 1)
+            "•"))))))
+
+  ;; Better heading sizes
+  (custom-theme-set-faces
+   'user
+
+   ;; headings
+   '(org-level-1 ((t (:height 1.3 :weight bold))))
+   '(org-level-2 ((t (:height 1.2 :weight bold))))
+   '(org-level-3 ((t (:height 1.1 :weight semi-bold))))
+   '(org-level-4 ((t (:height 1.05 :weight semi-bold))))
+
+   ;; document title
+   '(org-document-title
+     ((t (:height 1.5 :weight bold))))
+
+   ;; fixed-pitch elements
+   '(org-block ((t (:inherit fixed-pitch))))
+   '(org-code ((t (:inherit (shadow fixed-pitch)))))
+   '(org-table ((t (:inherit fixed-pitch))))
+   '(org-verbatim ((t (:inherit (shadow fixed-pitch)))))
+   '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+   '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+   '(org-checkbox ((t (:inherit fixed-pitch))))))
+
+(defun my/org-mode-setup ()
+  ;; prose wrapping
+  (visual-line-mode 1)
+
+  ;; variable width text
+  (variable-pitch-mode 1)
+
+  ;; no line numbers in org
+  (display-line-numbers-mode 0))
+
+(use-package org-bullets
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
