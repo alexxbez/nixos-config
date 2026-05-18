@@ -499,7 +499,7 @@
            printf '\e]51;A%s\e\\' (pwd)
            vterm_old_fish_prompt
        end
-    ''
+    '';
   };
 
   programs.zsh = {
