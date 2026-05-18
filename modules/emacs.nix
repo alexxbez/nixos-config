@@ -33,6 +33,8 @@
         org-bullets
         visual-fill-column
         corfu
+
+        cuda-mode
       ];
   };
 

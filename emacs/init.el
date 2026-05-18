@@ -452,7 +452,8 @@
 
 (use-package corfu
   ;; Optional customizations
-  ;; :custom
+  :custom
+  (corfu-auto t)
   ;; (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
   ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
   ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
@@ -494,4 +495,7 @@
   ;; commands are hidden, since they are not used via M-x. This setting is
   ;; useful beyond Corfu.
   (read-extended-command-predicate #'command-completion-default-include-p))
+
+(use-package eglot
+  :hook ((c-mode c++-mode cuda-mode) . eglot-ensure))
 
