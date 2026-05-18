@@ -67,7 +67,8 @@
 (global-display-line-numbers-mode t)
 
 (dolist (mode '(term-mode-hook
-		eshell-mode-hook))
+		eshell-mode-hook
+		vterm-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (set-face-attribute 'line-number nil
@@ -309,6 +310,11 @@
                (buffer-live-p buffer))
       (kill-buffer buffer))))
 
+;; Open dired from current terminal
+(defun my/dired-here ()
+  (interactive)
+  (dired default-directory))
+
 ;; General
 (use-package general
   :config
@@ -333,9 +339,13 @@
   "ws" '(split-window-below :which-key "horizontal split")
   "wd" '(delete-window :which-key "delete")
   "wh" '(windmove-left :which-key "left")
+  "w<left>" '(windmove-left :which-key "left")
   "wl" '(windmove-right :which-key "right")
+  "w<right>" '(windmove-right :which-key "right")
   "wk" '(windmove-up :which-key "up")
+  "w<up>" '(windmove-up :which-key "up")
   "wj" '(windmove-down :which-key "down")
+  "w<down>" '(windmove-down :which-key "down")
 
   "t"  '(:ignore t :which-key "terminal")
   "tv" '(my/vterm-split-right
@@ -343,4 +353,6 @@
   "ts" '(my/vterm-split-below
          :which-key "vterm horizontal")
   "td" '(my/delete-window
-         :which-key "delete window"))
+         :which-key "delete window")
+  "t." '(my/dired-here :which-key "dired here"))
+
