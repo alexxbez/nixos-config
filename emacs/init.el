@@ -267,46 +267,48 @@
   (setq my/vterm-counter (1+ my/vterm-counter))
   (format "*vterm:%d*" my/vterm-counter))
 
-(defun my/vterm-split-right ()
-  (interactive)
-  (let ((buffer (generate-new-buffer
-                 (my/new-vterm-buffer-name))))
-    (split-window-right)
-    (other-window 1)
+(defun my/open-vterm ()
+  (let ((buffer-name
+         (my/new-vterm-buffer-name)))
 
-    (vterm buffer)
+    ;; create terminal
+    (vterm buffer-name)
 
-    ;; tie buffer lifecycle to window
+    ;; mark current window as owning this terminal
     (set-window-parameter
      (selected-window)
      'my/vterm-buffer
-     buffer)))
+     (current-buffer))))
+
+(defun my/vterm-split-right ()
+  (interactive)
+
+  (split-window-right)
+  (other-window 1)
+
+  (my/open-vterm))
 
 (defun my/vterm-split-below ()
   (interactive)
-  (let ((buffer (generate-new-buffer
-                 (my/new-vterm-buffer-name))))
-    (split-window-below)
-    (other-window 1)
 
-    (vterm buffer)
+  (split-window-below)
+  (other-window 1)
 
-    (set-window-parameter
-     (selected-window)
-     'my/vterm-buffer
-     buffer)))
+  (my/open-vterm))
 
 (defun my/delete-window ()
   (interactive)
 
   (let* ((window (selected-window))
-         (buffer (window-parameter
-                  window
-                  'my/vterm-buffer)))
+         (buffer
+          (window-parameter
+           window
+           'my/vterm-buffer)))
 
+    ;; remove visual split
     (delete-window window)
 
-    ;; only kill vterm buffers we created
+    ;; kill associated terminal
     (when (and buffer
                (buffer-live-p buffer))
       (kill-buffer buffer))))
