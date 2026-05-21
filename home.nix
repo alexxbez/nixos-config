@@ -118,6 +118,7 @@
     jetbrains.idea
     obsidian
     kmonad
+    tree-sitter-grammars.tree-sitter-typst
   ];
 
   programs.kitty = {
