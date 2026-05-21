@@ -1,13 +1,13 @@
 { config, pkgs, ... }:
-
+let
+  emacs-with-grammars = pkgs.emacs-pgtk.pkgs.withPackages (epkgs: [
+    epkgs.treesit-grammars.with-all-grammars
+  ]);
+in
 {
   programs.emacs = {
     enable = true;
-
-    # Wayland-native Emacs
-    package = pkgs.emacs-pgtk;
-
-    # Nix-managed Emacs packages go here
+    package = emacs-with-grammars;
     extraPackages =
       epkgs: with epkgs; [
         use-package
@@ -36,19 +36,16 @@
         eldoc-box
         jinx
         pdf-tools
-
         cuda-mode
         rust-mode
         typst-ts-mode
       ];
   };
 
-  # Emacs daemon
   services.emacs = {
     enable = true;
     defaultEditor = true;
   };
 
-  # Link your init.el into ~/.config/emacs/
   home.file.".config/emacs/init.el".source = ../emacs/init.el;
 }
