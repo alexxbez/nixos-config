@@ -460,7 +460,10 @@
   (setq jinx-languages "en_US es_ES"))
 
 ;; Pdf tools
-(use-package pdf-tools)
+(use-package pdf-tools
+  :config
+  (pdf-loader-install)
+  (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1))))
 
 ;; Corfu completion
 
