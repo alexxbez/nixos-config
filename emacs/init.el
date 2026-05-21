@@ -518,9 +518,6 @@
   )
 
 (use-package rust-mode)
-(use-package typst-ts-mode
-  :elpaca (:type git :host sourcehut :repo "meow_king/typst-ts-mode")
-  :custom
-  (typst-ts-mode-watch-options "--open"))
+(use-package typst-ts-mode)
 
 (use-package eldoc-box)
