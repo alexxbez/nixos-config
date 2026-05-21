@@ -452,7 +452,7 @@
 (use-package jinx
   :hook
   (text-mode . jinx-mode)
-  (typst-mode . jinx-mode)
+  (typst-ts-mode . jinx-mode)
   :bind (("M-$" . jinx-correct)
          ("C-M-$" . jinx-languages))
 
