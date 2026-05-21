@@ -34,9 +34,12 @@
         visual-fill-column
         corfu
         eldoc-box
+        jinx
+        pdf-tools
 
         cuda-mode
         rust-mode
+        typst-mode
       ];
   };
 

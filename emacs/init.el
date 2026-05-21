@@ -448,6 +448,20 @@
 
 (use-package visual-fill-column)
 
+;; Jinx spell check
+(use-package jinx
+  :hook
+  (text-mode . jinx-mode)
+  (typst-mode . jinx-mode)
+  :bind (("M-$" . jinx-correct)
+         ("C-M-$" . jinx-languages))
+
+  :config
+  (setq jinx-languages "en_US es_ES"))
+
+;; Pdf tools
+(use-package pdf-tools)
+
 ;; Corfu completion
 
 (use-package corfu
@@ -500,9 +514,10 @@
   :hook
   ((c-mode c++-mode cuda-mode) . eglot-ensure)
   (rust-mode . eglot-ensure)
+  (typst-mode . eglot-ensure)
   )
 
 (use-package rust-mode)
+(use-package typst-mode)
 
-(use-package eldoc-box
-  :hook (eglot-managed-mode . eldoc-box-hover-mode))
+(use-package eldoc-box)
