@@ -514,10 +514,10 @@
   :hook
   ((c-mode c++-mode cuda-mode) . eglot-ensure)
   (rust-mode . eglot-ensure)
-  (typst-mode . eglot-ensure)
+  (typst-ts-mode . eglot-ensure)
   )
 
 (use-package rust-mode)
-(use-package typst-mode)
+(use-package typst-ts-mode)
 
 (use-package eldoc-box)

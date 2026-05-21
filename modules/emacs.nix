@@ -39,7 +39,7 @@
 
         cuda-mode
         rust-mode
-        typst-mode
+        typst-ts-mode
       ];
   };
 
