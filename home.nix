@@ -118,6 +118,7 @@
     jetbrains.idea
     obsidian
     kmonad
+    localsend
   ];
 
   programs.kitty = {

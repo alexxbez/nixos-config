@@ -463,6 +463,7 @@
 (use-package pdf-tools
   :config
   (pdf-loader-install)
+  (add-hook 'pdf-view-mode-hook #'auto-revert-mode)
   (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1))))
 
 ;; Corfu completion
