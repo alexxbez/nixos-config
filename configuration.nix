@@ -173,6 +173,7 @@
 
     pkg-config
     libffi
+    alsa-lib
   ];
 
   virtualisation.docker = {
