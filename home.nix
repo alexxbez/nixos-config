@@ -119,6 +119,7 @@
     obsidian
     kmonad
     localsend
+    wayland
   ];
 
   programs.kitty = {
