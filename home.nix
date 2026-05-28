@@ -495,7 +495,7 @@
     };
     interactiveShellInit = ''
       set -gx LD_LIBRARY_PATH /run/current-system/sw/share/nix-ld/lib $LD_LIBRARY_PATH
-      set -gx PKG_CONFIG_PATH "${pkgs.wayland}/lib/pkgconfig" $PKG_CONFIG_PATH
+      set -gx PKG_CONFIG_PATH "${pkgs.wayland.dev}/lib/pkgconfig" $PKG_CONFIG_PATH
 
        functions --copy fish_prompt vterm_old_fish_prompt
 
