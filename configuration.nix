@@ -161,6 +161,7 @@
     mesa
     libglvnd
     xwayland
+    wayland
     libGL
     glib
 
@@ -169,6 +170,9 @@
     nss
 
     pipewire.jack
+
+    pkg-config
+    libffi
   ];
 
   virtualisation.docker = {
