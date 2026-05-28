@@ -54,15 +54,15 @@
 
   services.envfs.enable = true;
 
-  programs.nix-ld = {
-    enable = true;
-    libraries = with pkgs; [
-      wayland
-      libxkbcommon
-      vulkan-loader
-      libGL
-    ];
-  };
+  # programs.nix-ld = {
+  #   enable = true;
+  #   libraries = with pkgs; [
+  #     wayland
+  #     libxkbcommon
+  #     vulkan-loader
+  #     libGL
+  #   ];
+  # };
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
@@ -161,7 +161,6 @@
     mesa
     libglvnd
     xwayland
-    wayland
     libGL
     glib
 
@@ -170,10 +169,6 @@
     nss
 
     pipewire.jack
-
-    pkg-config
-    libffi
-    alsa-lib
   ];
 
   virtualisation.docker = {
