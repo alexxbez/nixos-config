@@ -120,6 +120,7 @@
     kmonad
     localsend
     wayland
+    direnv
   ];
 
   programs.kitty = {
@@ -503,6 +504,8 @@
            printf '\e]51;A%s\e\\' (pwd)
            vterm_old_fish_prompt
        end
+
+      direnv hook fish | source
     '';
   };
 

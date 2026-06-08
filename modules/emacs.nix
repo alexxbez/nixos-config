@@ -40,6 +40,7 @@ in
       cuda-mode
       rust-mode
       typst-ts-mode
+      envrc
     ]);
   };
 

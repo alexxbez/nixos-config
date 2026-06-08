@@ -525,3 +525,18 @@
 (use-package typst-ts-mode)
 
 (use-package eldoc-box)
+
+;; Add envrc for direnv
+(use-package envrc
+  :hook (after-init . envrc-global-mode))
+
+;; function to create a envrc in the current dir
+(defun my/create-envrc ()
+  (interactive)
+  (let ((envrc-path (expand-file-name ".envrc" default-directory)))
+    (if (file-exists-p envrc-path)
+        (message ".envrc already exists in %s" default-directory)
+      (with-temp-file envrc-path
+        (insert "use flake\n"))
+      (shell-command (format "direnv allow %s" envrc-path))
+      (message "Created .envrc in %s" default-directory))))
