@@ -122,7 +122,6 @@
     wayland
     direnv
 
-    sfizz
     sfizz-ui
   ];
 
