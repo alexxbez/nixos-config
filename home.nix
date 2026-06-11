@@ -121,6 +121,8 @@
     localsend
     wayland
     direnv
+
+    lmms
   ];
 
   programs.kitty = {
