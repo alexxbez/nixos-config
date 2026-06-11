@@ -122,7 +122,7 @@
     wayland
     direnv
 
-    lmms
+    sfizz
   ];
 
   programs.kitty = {
