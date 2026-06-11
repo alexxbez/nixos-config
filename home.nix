@@ -123,6 +123,7 @@
     direnv
 
     sfizz
+    sfizz-ui
   ];
 
   programs.kitty = {
