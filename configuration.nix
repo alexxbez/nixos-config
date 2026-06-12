@@ -242,6 +242,35 @@
       DynamicUser = false;
     };
   };
+
+  # NVIDIA
+
+  hardware.nvidia.prime = {
+    offload = {
+      enable = true;
+      enableOffloadCmd = true;
+    };
+
+    # integrated id
+    intelBusId = "PCI:0:2:0";
+
+    # dedicated id
+    nvidiaBusId = "PCI:1:0:0";
+  };
+
+  spacialisation = {
+    gaming.configuration = {
+
+      hardware.nvidia = {
+        prime.sync.enable = lib.mkForce true;
+        prime.offload = {
+          enable = lib.mkForce false;
+          enableOffloadCmd = lib.mkForce false;
+        };
+      };
+    };
+  };
+
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
