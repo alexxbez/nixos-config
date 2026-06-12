@@ -123,7 +123,7 @@
     direnv
 
     sfizz-ui
-    protonup
+    protonup-ng
     mangohud
   ];
 
