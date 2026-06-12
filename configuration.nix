@@ -258,7 +258,7 @@
     nvidiaBusId = "PCI:1:0:0";
   };
 
-  spacialisation = {
+  specialisation = {
     gaming.configuration = {
 
       hardware.nvidia = {
