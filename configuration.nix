@@ -199,6 +199,7 @@
   networking.firewall.allowedTCPPorts = [
     5173
     8383
+    9090
   ];
 
   # Kmonad
