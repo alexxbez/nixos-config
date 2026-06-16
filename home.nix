@@ -122,6 +122,8 @@
     wayland
     direnv
 
+    calibre
+
     sfizz-ui
     protonup-ng
     mangohud
