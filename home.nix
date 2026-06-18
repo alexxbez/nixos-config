@@ -121,6 +121,7 @@
     localsend
     wayland
     direnv
+    discord
 
     calibre
 
