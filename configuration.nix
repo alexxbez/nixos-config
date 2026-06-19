@@ -254,31 +254,29 @@
 
   # NVIDIA
 
-  hardware.nvidia.prime = {
-    offload = {
-      enable = true;
-      enableOffloadCmd = true;
-    };
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
 
-    # integrated id
-    intelBusId = "PCI:0:2:0";
-
-    # dedicated id
-    nvidiaBusId = "PCI:1:0:0";
-  };
-
-  specialisation = {
-    gaming.configuration = {
-
-      hardware.nvidia = {
-        prime.sync.enable = lib.mkForce true;
-        prime.offload = {
-          enable = lib.mkForce false;
-          enableOffloadCmd = lib.mkForce false;
-        };
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
       };
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
     };
   };
+
+  boot.kernelParams = [
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+    "nvidia-drm.modeset=1"
+    "nvidia-drm.fbdev=1"
+  ];
+
+  systemd.services.nvidia-resume.enable = true;
 
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
