@@ -176,6 +176,8 @@
     nss
 
     pipewire.jack
+
+    inputs.zen-browser.packages."${pkgs.system}".default
   ];
 
   virtualisation.docker = {
