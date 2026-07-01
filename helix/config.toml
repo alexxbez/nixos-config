@@ -3,7 +3,16 @@ theme = "gruvbox-material"
 [editor]
 line-number = "relative"
 mouse = true
+scrolloff = 10
 
 [editor.cursor-shape]
 normal = "block"
 insert = "bar"
+
+[editor.lsp]
+enable = true
+display-inlay-hints = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+other-lines = "hint"
