@@ -1,1 +1,9 @@
 theme = "gruvbox-material"
+
+[editor]
+line-number = "relative"
+mouse = true
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
