@@ -578,6 +578,8 @@
   xdg = {
     enable = true;
     configFile."helix".source = ./helix;
+
+    force = true;
   };
   
 
