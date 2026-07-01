@@ -575,7 +575,11 @@
     ];
   };
 
-  xdg.configFile."helix".source = ./helix;
+  xdg = {
+    enable = true;
+    configFile."helix".source = ./helix;
+  };
+  
 
   home.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
