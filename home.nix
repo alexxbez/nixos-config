@@ -577,9 +577,10 @@
 
   xdg = {
     enable = true;
-    configFile."helix".source = ./helix;
-
-    force = true;
+    configFile."helix" = {
+      source = ./helix;
+      force = true;
+    };
   };
   
 
