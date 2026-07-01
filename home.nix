@@ -81,6 +81,7 @@
     chromium
     bun
     neovim
+    helix
     cmake
     gnumake
     nerd-fonts.hasklug
