@@ -14,5 +14,5 @@ enable = true
 display-inlay-hints = true
 
 [editor.inline-diagnostics]
-cursor-line = "hint"
-other-lines = "hint"
+cursor-line = "warning"
+other-lines = "warning"
