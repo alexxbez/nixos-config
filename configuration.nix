@@ -178,6 +178,8 @@
     pipewire.jack
 
     inputs.zen-browser.packages."${pkgs.system}".default
+
+    wl-clipboard
   ];
 
   virtualisation.docker = {
