@@ -16,3 +16,11 @@ display-inlay-hints = true
 [editor.inline-diagnostics]
 cursor-line = "warning"
 other-lines = "warning"
+
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
+
+[[language]]
+name = "typst"
+language-servers = ["codebook"]
