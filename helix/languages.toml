@@ -5,3 +5,8 @@ args = ["server"]
 [[language]]
 name = "markdown"
 language-servers = ["codebook"]
+
+
+[[language]]
+name = "tyspt"
+language-servers = ["codebook"]
