@@ -107,6 +107,7 @@
     pyright
     racket
     tinymist
+    codebook
     nil
     obs-studio
     cisco-packet-tracer_9
