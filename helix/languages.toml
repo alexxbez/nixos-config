@@ -1,0 +1,7 @@
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["server"]
+
+[[language]]
+name = "markdown"
+language-servers = ["codebook"]
