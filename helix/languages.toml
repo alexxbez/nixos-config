@@ -6,7 +6,10 @@ args = ["server"]
 name = "markdown"
 language-servers = ["codebook"]
 
+[[language]]
+name = "typst"
+language-servers = ["tinymist", "codebook"]
 
 [[language]]
-name = "tyspt"
-language-servers = ["codebook"]
+name = "rust"
+language-servers = ["rust-analyzer", "codebook"]
