@@ -18,7 +18,9 @@ cursor-line = "warning"
 other-lines = "warning"
 
 [editor.whitespace.render]
+space = "all"
 tab = "all"
 
 [editor.whitespace.characters]
+space = "."
 tab = ""
