@@ -16,3 +16,9 @@ display-inlay-hints = true
 [editor.inline-diagnostics]
 cursor-line = "warning"
 other-lines = "warning"
+
+[editor.whitespace.render]
+tab = "all"
+
+[editor.whitespace.characters]
+tab = ""
