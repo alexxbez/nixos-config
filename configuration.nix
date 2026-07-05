@@ -61,15 +61,8 @@
 
   services.envfs.enable = true;
 
-  # programs.nix-ld = {
-  #   enable = true;
-  #   libraries = with pkgs; [
-  #     wayland
-  #     libxkbcommon
-  #     vulkan-loader
-  #     libGL
-  #   ];
-  # };
+  programs.nix-ld.enable = true;
+  environment.localBinInPath = true;
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
