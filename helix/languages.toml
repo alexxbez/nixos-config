@@ -5,10 +5,12 @@ args = ["server"]
 [[language]]
 name = "markdown"
 language-servers = ["codebook"]
+soft-wrap.enable = true
 
 [[language]]
 name = "typst"
 language-servers = ["tinymist", "codebook"]
+soft-wrap.enable = true
 
 [[language]]
 name = "rust"
