@@ -143,13 +143,14 @@
   #   extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
   # };
 
-  # xdg.portal = {
-  #   enable = true;
-  #
-  #   extraPortals = with pkgs; [
-  #     xdg-desktop-portal-gnome
-  #   ];
-  # };
+  xdg.portal = {
+    enable = true;
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+  };
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
