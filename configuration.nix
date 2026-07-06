@@ -178,8 +178,8 @@
     via
 
     
-    inputs.zennotes.packages.${pkgs.system}.zennotes-desktop
-    inputs.zennotes.packages.${pkgs.system}.zennotes-server
+    inputs.zen-notes.packages.${pkgs.system}.zennotes-desktop
+    inputs.zen-notes.packages.${pkgs.system}.zennotes-server
   ];
 
   hardware.keyboard.qmk.enable = true; 

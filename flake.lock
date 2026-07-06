@@ -128,7 +128,8 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
-        "zen-browser": "zen-browser"
+        "zen-browser": "zen-browser",
+        "zen-notes": "zen-notes"
       }
     },
     "rust-analyzer-src": {
@@ -203,6 +204,26 @@
       "original": {
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
+        "type": "github"
+      }
+    },
+    "zen-notes": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1783025335,
+        "narHash": "sha256-G0vyXlwVQ0rGYafyIsDQRmbWnJLdFoeZk9XYrvaXKlk=",
+        "owner": "ZenNotes",
+        "repo": "zennotes",
+        "rev": "e269443c0619254400a83937de9ead90147bccc9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ZenNotes",
+        "repo": "zennotes",
         "type": "github"
       }
     }
