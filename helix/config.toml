@@ -7,7 +7,7 @@ scrolloff = 10
 
 [editor.cursor-shape]
 normal = "block"
-insert = "block"
+insert = "bar"
 
 [editor.lsp]
 enable = true
