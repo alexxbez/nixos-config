@@ -18,6 +18,10 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-notes = {
+      url = "github:ZenNotes/zennotes";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {

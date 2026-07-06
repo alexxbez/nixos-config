@@ -176,6 +176,10 @@
 
     qmk
     via
+
+    
+    inputs.zennotes.packages.${pkgs.system}.zennotes-desktop
+    inputs.zennotes.packages.${pkgs.system}.zennotes-server
   ];
 
   hardware.keyboard.qmk.enable = true; 
