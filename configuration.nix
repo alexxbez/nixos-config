@@ -173,7 +173,13 @@
     inputs.zen-browser.packages."${pkgs.system}".default
 
     wl-clipboard
+
+    qmk
+    via
   ];
+
+  hardware.keyboard.qmk.enable = true; 
+  services.udev.packages = [ pkgs.via ];
 
   virtualisation.docker = {
     enable = true;
