@@ -250,9 +250,9 @@
         "noctalia-shell"
         "hyprctl dispatch workspace 1"
       ];
-
+      # 1920x1200@60.01Hz
       monitor = [
-        "eDP-2,preferred,auto,1.0"
+        "eDP-2,1920x1200@60.01Hz,auto,1.0"
         "HDMI-A-1,highrr,auto-up,1"
       ];
 
