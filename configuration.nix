@@ -283,15 +283,15 @@
     "nvidia-drm.modeset=1"
     "nvidia-drm.fbdev=1"
     "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
-    "i915.fastboot=1"
+    "i915.enable_psr=0"
   ];
 
-  boot.initrd.kernelModules = [
-    "nvidia"
-    "nvidia_modeset"
-    "nvidia_uvm"
-    "nvidia_drm"
-  ];
+  # boot.initrd.kernelModules = [
+  #   "nvidia"
+  #   "nvidia_modeset"
+  #   "nvidia_uvm"
+  #   "nvidia_drm"
+  # ];
 
   specialisation = {
     gaming.configuration = {
