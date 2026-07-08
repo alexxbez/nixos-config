@@ -4,6 +4,7 @@ theme = "gruvbox-material"
 line-number = "relative"
 mouse = true
 scrolloff = 10
+color-modes = true
 
 [editor.cursor-shape]
 normal = "block"
