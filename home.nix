@@ -96,10 +96,6 @@
     nodejs
     typescript
     typescript-language-server
-    jetbrains-toolbox
-    jetbrains.webstorm
-    jetbrains.datagrip
-    jetbrains.pycharm
     zed-editor
     anki
     typst
@@ -117,7 +113,6 @@
     hyprshot
     javaPackages.compiler.openjdk21
     leiningen
-    jetbrains.idea
     obsidian
     kmonad
     localsend
