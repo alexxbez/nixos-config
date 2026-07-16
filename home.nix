@@ -110,7 +110,7 @@
     codebook
     nil
     obs-studio
-    cisco-packet-tracer_9
+    # cisco-packet-tracer_9
     reaper
     nyxt
     spotify
@@ -325,7 +325,7 @@
       };
 
       dwindle = {
-        pseudotile = true;
+        # pseudotile = true; deprecated or who knows what
         preserve_split = true;
       };
 
@@ -337,7 +337,7 @@
         force_default_wallpaper = 1;
         disable_hyprland_logo = true;
         vrr = 1;
-        vfr = true;
+        # vfr = true; deprecated or who knows what
       };
 
       input = {
