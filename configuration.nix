@@ -80,6 +80,7 @@
     fontconfig
     freetype
     libpng
+    libnss
   ];
   environment.localBinInPath = true;
 
