@@ -63,13 +63,20 @@
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
+    libpulseaudio
+    libGL
     xorg.libX11
+    xorg.libXcomposite
+    xorg.libXcursor
+    xorg.libXdamage
     xorg.libXext
+    xorg.libXfixes
     xorg.libXi
+    xorg.libXrandr
     xorg.libXrender
     xorg.libXtst
-    xorg.libXrandr
-    libGL
+    alsa-lib
+    mesa
     fontconfig
     freetype
   ];
