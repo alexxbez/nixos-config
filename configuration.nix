@@ -81,6 +81,7 @@
     freetype
     libpng
     nss
+    nspr
   ];
   environment.localBinInPath = true;
 
