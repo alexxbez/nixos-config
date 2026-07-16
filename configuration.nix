@@ -82,6 +82,7 @@
     libpng
     nss
     nspr
+    expat
   ];
   environment.localBinInPath = true;
 
