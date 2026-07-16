@@ -25,6 +25,9 @@
   # Allow unfree software
   nixpkgs.config.allowUnfree = true;
 
+  # Add flatpak
+  services.flatpak.enable = true;
+
   programs.hyprland.enable = true;
 
   # Use the systemd-boot EFI boot loader.
