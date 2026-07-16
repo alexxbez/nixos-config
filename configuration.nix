@@ -79,10 +79,6 @@
     mesa
     fontconfig
     freetype
-    libpng
-    nss
-    nspr
-    expat
   ];
   environment.localBinInPath = true;
 
