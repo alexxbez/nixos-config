@@ -62,6 +62,17 @@
   services.envfs.enable = true;
 
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    xorg.libX11
+    xorg.libXext
+    xorg.libXi
+    xorg.libXrender
+    xorg.libXtst
+    xorg.libXrandr
+    libGL
+    fontconfig
+    freetype
+  ];
   environment.localBinInPath = true;
 
   # Enable the X11 windowing system.
