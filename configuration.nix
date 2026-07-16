@@ -79,6 +79,7 @@
     mesa
     fontconfig
     freetype
+    libpng
   ];
   environment.localBinInPath = true;
 
