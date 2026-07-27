@@ -125,6 +125,8 @@
     sfizz-ui
     protonup-ng
     mangohud
+
+    xiphos
   ];
 
   programs.kitty = {
