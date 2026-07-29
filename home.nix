@@ -127,6 +127,8 @@
     mangohud
 
     xiphos
+
+    opencode
   ];
 
   programs.kitty = {
