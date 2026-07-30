@@ -129,6 +129,8 @@
     xiphos
 
     opencode
+    luaPackages.fennel
+    fennel-ls
   ];
 
   programs.kitty = {
