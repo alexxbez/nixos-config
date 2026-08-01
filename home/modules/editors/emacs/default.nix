@@ -49,5 +49,5 @@ in
     defaultEditor = true;
   };
 
-  home.file.".config/emacs/init.el".source = ../emacs/init.el;
+  home.file.".config/emacs/init.el".source = ./init.el;
 }
