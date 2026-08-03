@@ -7,5 +7,6 @@
     ./editors
     ./hyprland
     ./kitty
+    ./opencode
   ];
 }
