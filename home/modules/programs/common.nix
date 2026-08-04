@@ -38,6 +38,7 @@
     opencode
     luaPackages.fennel
     fennel-ls
+    prek
   ];
 
   fonts.fontconfig.enable = true;

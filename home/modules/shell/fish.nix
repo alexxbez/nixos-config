@@ -18,6 +18,8 @@
        end
 
       direnv hook fish | source
+
+      COMPLETE=fish prek | source
     '';
   };
 
