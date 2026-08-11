@@ -43,6 +43,7 @@
     go
     gopls
     zellij
+    csharp-ls
   ];
 
   fonts.fontconfig.enable = true;
