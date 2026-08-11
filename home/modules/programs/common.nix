@@ -43,6 +43,7 @@
     go
     gopls
     zellij
+    dotnet-sdk
     csharp-ls
   ];
 
