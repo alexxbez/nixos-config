@@ -41,6 +41,7 @@
     prek
     unityhub
     go
+    gopls
   ];
 
   fonts.fontconfig.enable = true;
