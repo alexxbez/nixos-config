@@ -40,6 +40,7 @@
     fennel-ls
     prek
     unityhub
+    go
   ];
 
   fonts.fontconfig.enable = true;
