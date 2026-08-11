@@ -45,6 +45,7 @@
     zellij
     dotnet-sdk
     csharp-ls
+    omnisharp-roslyn
   ];
 
   fonts.fontconfig.enable = true;
