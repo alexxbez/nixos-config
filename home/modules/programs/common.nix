@@ -39,6 +39,7 @@
     luaPackages.fennel
     fennel-ls
     prek
+    unityhub
   ];
 
   fonts.fontconfig.enable = true;
