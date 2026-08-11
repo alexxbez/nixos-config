@@ -42,6 +42,7 @@
     unityhub
     go
     gopls
+    zellij
   ];
 
   fonts.fontconfig.enable = true;
