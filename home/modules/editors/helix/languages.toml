@@ -15,7 +15,3 @@ soft-wrap.enable = true
 [[language]]
 name = "rust"
 language-servers = ["rust-analyzer", "codebook"]
-
-[[language]]
-name = "csharp"
-language-servers = ["omnisharp-roslyn"]
