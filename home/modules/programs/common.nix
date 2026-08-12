@@ -46,6 +46,7 @@
     dotnet-sdk
     csharp-ls
     omnisharp-roslyn
+    mono
   ];
 
   fonts.fontconfig.enable = true;
