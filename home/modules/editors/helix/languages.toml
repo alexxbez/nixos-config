@@ -15,3 +15,11 @@ soft-wrap.enable = true
 [[language]]
 name = "rust"
 language-servers = ["rust-analyzer", "codebook"]
+
+[[language]]
+name = "python"
+language-servers = ["pyright"]
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
