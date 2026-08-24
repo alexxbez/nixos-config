@@ -47,6 +47,9 @@
     csharp-ls
     omnisharp-roslyn
     mono
+    ibm-plex
+    atkinson-hyperlegible
+    noto-fonts
   ];
 
   fonts.fontconfig.enable = true;
