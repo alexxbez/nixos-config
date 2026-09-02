@@ -51,6 +51,7 @@
     atkinson-hyperlegible
     noto-fonts
     sigil
+    pageedit
   ];
 
   fonts.fontconfig.enable = true;
