@@ -50,6 +50,7 @@
     ibm-plex
     atkinson-hyperlegible
     noto-fonts
+    sigil
   ];
 
   fonts.fontconfig.enable = true;
