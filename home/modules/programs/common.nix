@@ -52,6 +52,7 @@
     noto-fonts
     sigil
     pageedit
+    safe-rm
   ];
 
   fonts.fontconfig.enable = true;
