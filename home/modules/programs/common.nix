@@ -53,6 +53,7 @@
     sigil
     pageedit
     safe-rm
+    ghc
   ];
 
   fonts.fontconfig.enable = true;
