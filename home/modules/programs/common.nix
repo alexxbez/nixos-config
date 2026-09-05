@@ -54,6 +54,8 @@
     pageedit
     safe-rm
     ghc
+    soundfont-fluid
+    fluidsynth
   ];
 
   fonts.fontconfig.enable = true;
