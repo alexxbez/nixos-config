@@ -5,7 +5,7 @@
     enable = true;
 
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "Hasklug Nerd Font";
       size = 11.0;
     };
 
