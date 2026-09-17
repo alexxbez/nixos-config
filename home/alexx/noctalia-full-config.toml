@@ -375,7 +375,7 @@ scale = 1.0
 
 [plugins]
 auto_update = "all"
-enabled = []
+enabled = [ "notfinaldev/web-search", "samuelskovbakke/calculator-plus" ]
 
     [[plugins.source]]
     enabled = true

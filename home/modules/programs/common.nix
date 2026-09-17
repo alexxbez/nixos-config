@@ -56,6 +56,7 @@
     ghc
     soundfont-fluid
     fluidsynth
+    libqalculate
   ];
 
   fonts.fontconfig.enable = true;
