@@ -12,57 +12,7 @@
   ];
 
   programs.noctalia = {
-    enable = true;
-    settings = {
-      bar = {
-        density = "default";
-        position = "left";
-        showCapsule = false;
-
-        widgets = {
-          left = [
-            {
-              id = "Launcher";
-            }
-            {
-              id = "Clock";
-            }
-            {
-              id = "SystemMonitor";
-            }
-          ];
-
-          center = [
-            {
-              id = "Workspace";
-            }
-          ];
-
-          right = [
-            {
-              id = "NotificationHistory";
-            }
-            {
-              id = "Battery";
-            }
-            {
-              id = "Volume";
-            }
-            {
-              id = "Brightness";
-            }
-            {
-              id = "ControlCenter";
-            }
-          ];
-        };
-      };
-      colorSchemes = {
-        useWallpaperColors = false;
-        darkMode = true;
-        predefinedScheme = "Monochrome";
-      };
-    };
+    settings = ./noctalia-full-config.toml;
   };
 
   home.file."cache/noctalia/wallpapers.json" = {
