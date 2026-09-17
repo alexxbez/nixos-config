@@ -12,7 +12,7 @@
     enable = true;
     settings = {
       exec-once = [
-        "noctalia-shell"
+        "noctalia"
         "hyprctl dispatch workspace 1"
       ];
       # 1920x1200@60.01Hz
