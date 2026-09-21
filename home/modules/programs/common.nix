@@ -57,6 +57,7 @@
     soundfont-fluid
     fluidsynth
     libqalculate
+    cisco-packet-tracer_9
   ];
 
   fonts.fontconfig.enable = true;
