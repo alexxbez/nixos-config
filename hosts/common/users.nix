@@ -7,6 +7,7 @@
     extraGroups = [
       "wheel"
       "audio"
+      "kvm"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
     packages = with pkgs; [
