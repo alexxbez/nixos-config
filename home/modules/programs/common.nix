@@ -58,6 +58,7 @@
     fluidsynth
     libqalculate
     cisco-packet-tracer_9
+    android-tools
   ];
 
   fonts.fontconfig.enable = true;

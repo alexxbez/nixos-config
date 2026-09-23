@@ -8,6 +8,7 @@
       "wheel"
       "audio"
       "kvm"
+      "plugdev"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
     packages = with pkgs; [
