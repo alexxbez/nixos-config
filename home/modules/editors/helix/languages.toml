@@ -23,3 +23,7 @@ language-servers = ["pyright"]
 [language-server.pyright]
 command = "pyright-langserver"
 args = ["--stdio"]
+
+[[language]]
+name = "elm"
+auto-format = false

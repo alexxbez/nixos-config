@@ -18,7 +18,8 @@
       # 1920x1200@60.01Hz
       monitor = [
         "eDP-1,1920x1200@60.01Hz,auto,1.0"
-        "HDMI-A-1,highrr,auto-up,1"
+        # "HDMI-A-1,highrr,auto-up,1"
+        "HDMI-A-1,1920x1080@60.00Hz,auto-up,1"
       ];
 
       workspace = [
