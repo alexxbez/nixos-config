@@ -61,6 +61,9 @@
 
   security.rtkit.enable = true;
 
+  services.udisks2.enable = true;
+  security.polkit.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
