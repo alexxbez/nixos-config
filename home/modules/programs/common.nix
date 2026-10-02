@@ -58,6 +58,7 @@
     libqalculate
     cisco-packet-tracer_9
     android-tools
+    rpi-imager
   ];
 
   fonts.fontconfig.enable = true;
