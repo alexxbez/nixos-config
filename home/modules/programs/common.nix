@@ -39,7 +39,6 @@
     luaPackages.fennel
     fennel-ls
     prek
-    unityhub
     go
     gopls
     zellij
