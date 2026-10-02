@@ -13,6 +13,10 @@
     8080
   ];
 
+  networking.firewall.trustedInterfaces = [
+    "enp0s20f0u6"
+  ];
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
