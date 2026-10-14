@@ -73,6 +73,7 @@
       "zen"
       "google-chrome"
       "kitty"
+      "ghostty"
     ];
   };
 }
