@@ -47,7 +47,6 @@
 
   nix-homebrew = {
     enable = true;
-    enableRosetta = true;
     user = "alexx";
     autoMigrate = true;
   };
@@ -64,12 +63,9 @@
     casks = [
       # "anki"
       "calibre"
-      "chromium"
-      "cisco-packet-tracer"
       "discord"
       "obs"
       # "obsidian"
-      "pageedit"
       # "raspberry-pi-imager"
       "sigil"
       "spotify"
