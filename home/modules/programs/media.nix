@@ -1,9 +1,10 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, isDarwin, ... }:
 
 {
   home.packages = with pkgs; [
-    anki
     typst
+  ] ++ lib.optionals (!isDarwin) [
+    anki
     zathura
     obs-studio
     reaper

@@ -1,15 +1,20 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, isDarwin, ... }:
+
 let
-  emacs-with-grammars = pkgs.emacs-pgtk.overrideAttrs (old: {
-    buildInputs = (old.buildInputs or []) ++ [
-      pkgs.tree-sitter-grammars.tree-sitter-typst
-    ];
-  });
+  emacsPackage =
+    if isDarwin then
+      pkgs.emacs
+    else
+      pkgs.emacs-pgtk.overrideAttrs (old: {
+        buildInputs = (old.buildInputs or [ ]) ++ [
+          pkgs.tree-sitter-grammars.tree-sitter-typst
+        ];
+      });
 in
 {
   programs.emacs = {
     enable = true;
-    package = (pkgs.emacsPackagesFor emacs-with-grammars).emacsWithPackages (epkgs: with epkgs; [
+    package = (pkgs.emacsPackagesFor emacsPackage).emacsWithPackages (epkgs: with epkgs; [
       treesit-grammars.with-all-grammars
       use-package
       base16-theme

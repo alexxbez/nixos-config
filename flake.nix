@@ -22,6 +22,9 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+    };
   };
   outputs =
     {
@@ -31,6 +34,14 @@
       nix-darwin,
       ...
     }@inputs:
+    let
+      mkHomeManager = isDarwin: {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit inputs isDarwin; };
+        home-manager.users.alexx = import ./home/alexx;
+      };
+    in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -38,29 +49,18 @@
         modules = [
           ./hosts/nixos
           home-manager.nixosModules.default
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.alexx = import ./home/alexx;
-          }
+          (mkHomeManager false)
         ];
       };
 
-      # Placeholder for future macOS configuration.
-      # Replace "my-mac" with your actual hostname when ready.
       darwinConfigurations.my-mac = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/darwin
+          inputs.nix-homebrew.darwinModules.nix-homebrew
           home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.alexx = import ./home/alexx;
-          }
+          (mkHomeManager true)
         ];
       };
     };

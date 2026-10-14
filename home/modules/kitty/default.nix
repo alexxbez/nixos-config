@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, isDarwin, ... }:
 
 {
   programs.kitty = {
@@ -38,8 +38,6 @@
       confirm_os_window_close = 0;
       enable_audio_bell = "no";
       window_padding_width = "0 5";
-
-      linux_display_server = "wayland";
 
       foreground = "#bbbbbb";
       background = "#191919";
@@ -102,6 +100,8 @@
 
       color7 = "#bbbbbb";
       color15 = "#8e8e8e";
+    } // lib.optionalAttrs (!isDarwin) {
+      linux_display_server = "wayland";
     };
 
     extraConfig = ''

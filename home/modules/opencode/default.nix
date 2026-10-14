@@ -14,5 +14,6 @@
       General:
       - Keep commands compatible with NixOS.
       - If a dependency is missing, you may add it to the relevant shell.
+      - NEVER EVER commit. I will always tell you if a commit is necessary, but unless told NEVER EVER commit.
       '';
 }

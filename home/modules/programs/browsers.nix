@@ -1,10 +1,10 @@
-{ config, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, isDarwin, ... }:
 
 {
-  home.packages = with pkgs; [
+  home.packages = lib.optionals (!isDarwin) (with pkgs; [
     chromium
     nyxt
 
-    inputs.zen-browser.packages."${pkgs.system}".default
-  ];
+    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+  ]);
 }

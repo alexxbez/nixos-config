@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, isDarwin, ... }:
 
 {
   home.packages = with pkgs; [
@@ -7,6 +7,7 @@
     helix
     cmake
     gnumake
+    gcc
     nerd-fonts.hasklug
     nerd-fonts.jetbrains-mono
     libertinus
@@ -14,12 +15,10 @@
     kitty
     git
     fzf
-    gcc
     clang-tools
     nodejs
     typescript
     typescript-language-server
-    zed-editor
     pyright
     racket
     tinymist
@@ -27,14 +26,7 @@
     nil
     javaPackages.compiler.openjdk21
     leiningen
-    obsidian
-    kmonad
-    localsend
-    wayland
     direnv
-    discord
-    calibre
-    protonup-ng
     opencode
     luaPackages.fennel
     fennel-ls
@@ -49,17 +41,34 @@
     ibm-plex
     atkinson-hyperlegible
     noto-fonts
-    sigil
-    pageedit
     safe-rm
     ghc
-    soundfont-fluid
     fluidsynth
     libqalculate
-    cisco-packet-tracer_9
     android-tools
+  ] ++ lib.optionals (!isDarwin) [
+    zed-editor
+    obsidian
+    discord
+    kmonad
+    localsend
+    calibre
+    protonup-ng
+    sigil
+    pageedit
+    cisco-packet-tracer_9
     rpi-imager
+    wayland
   ];
 
-  fonts.fontconfig.enable = true;
+  fonts.fontconfig.enable = lib.mkIf (!isDarwin) true;
+
+  programs.git = {
+    enable = true;
+    settings = {
+      user.name = "alexxbez";
+      user.email = "alexxbez@proton.me";
+      init.defaultBranch = "main";
+    };
+  };
 }

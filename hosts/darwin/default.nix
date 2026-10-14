@@ -1,7 +1,80 @@
 { ... }:
 
 {
-  # Placeholder for a future nix-darwin configuration.
-  # Add macOS-specific settings here when you have a Mac.
+  imports = [
+    ../common/nix.nix
+  ];
+
+  nix = {
+    gc = {
+      automatic = true;
+      interval = [
+        {
+          Weekday = 7;
+          Hour = 3;
+          Minute = 15;
+        }
+      ];
+      options = "--delete-older-than 30d";
+    };
+    optimise.automatic = true;
+  };
+
+  system.stateVersion = 7;
+  system.primaryUser = "alexx";
+
+  programs.fish.enable = true;
   programs.zsh.enable = true;
+
+  time.timeZone = "America/Mexico_City";
+
+  networking = {
+    computerName = "my-mac";
+    hostName = "my-mac";
+    localHostName = "my-mac";
+  };
+
+  security.pam.services.sudo_local = {
+    enable = true;
+    touchIdAuth = true;
+  };
+
+  system.defaults = {
+    dock.autohide = true;
+    finder.AppleShowAllExtensions = true;
+    NSGlobalDomain.AppleShowAllExtensions = true;
+  };
+
+  nix-homebrew = {
+    enable = true;
+    enableRosetta = true;
+    user = "alexx";
+    autoMigrate = true;
+  };
+
+  homebrew = {
+    enable = true;
+    onActivation = {
+      autoUpdate = false;
+      upgrade = false;
+      cleanup = "zap";
+    };
+    enableFishIntegration = true;
+    enableZshIntegration = true;
+    casks = [
+      # "anki"
+      "calibre"
+      "chromium"
+      "cisco-packet-tracer"
+      "discord"
+      "obs"
+      # "obsidian"
+      "pageedit"
+      # "raspberry-pi-imager"
+      "sigil"
+      "spotify"
+      "zed"
+      "zen"
+    ];
+  };
 }

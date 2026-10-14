@@ -1,12 +1,11 @@
-{ ... }:
+{ lib, isDarwin, ... }:
 
 {
   imports = [
     ./programs
     ./shell
     ./editors
-    ./hyprland
     ./kitty
     ./opencode
-  ];
+  ] ++ lib.optionals (!isDarwin) [ ./linux ];
 }
