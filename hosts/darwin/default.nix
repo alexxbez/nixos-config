@@ -72,6 +72,7 @@
       "zed"
       "zen"
       "google-chrome"
+      "kitty"
     ];
   };
 }
