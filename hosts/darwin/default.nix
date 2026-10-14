@@ -71,7 +71,7 @@
       "spotify"
       "zed"
       "zen"
-      "chrome"
+      "google-chrome"
     ];
   };
 }
