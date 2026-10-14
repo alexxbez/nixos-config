@@ -42,7 +42,18 @@
   system.defaults = {
     dock.autohide = true;
     finder.AppleShowAllExtensions = true;
-    NSGlobalDomain.AppleShowAllExtensions = true;
+    NSGlobalDomain = {
+      AppleShowAllExtensions = true;
+
+      KeyRepeat = 8;
+      InitialKeyRepeat = 5;
+      ApplePressAndHoldEnabled = false;
+    };
+  };
+
+  system.keyboard = {
+    enableKeyMapping = true;
+    swapCapsLockAndEscape = true;
   };
 
   nix-homebrew = {
@@ -74,6 +85,7 @@
       "google-chrome"
       "kitty"
       "ghostty"
+      "nikitabobko/tap/aerospace"
     ];
   };
 }
