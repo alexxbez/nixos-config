@@ -46,15 +46,19 @@
   system.defaults = {
     dock.autohide = true;
     finder.AppleShowAllExtensions = true;
+
+    trackpad = {
+      Clicking = true;
+      Dragging = true;
+      DragLock = true;
+    };    
+
     NSGlobalDomain = {
       AppleShowAllExtensions = true;
 
       KeyRepeat = 3;
       InitialKeyRepeat = 13;
       ApplePressAndHoldEnabled = false;
-
-      
-      "com.apple.mouse.tapBehavior" = 1;
     };
   };
 
