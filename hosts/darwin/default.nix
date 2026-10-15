@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -26,6 +26,10 @@
   programs.fish.enable = true;
   programs.zsh.enable = true;
 
+  environment.shells = [
+    pkgs.fish
+  ];
+
   time.timeZone = "America/Mexico_City";
 
   networking = {
@@ -45,8 +49,8 @@
     NSGlobalDomain = {
       AppleShowAllExtensions = true;
 
-      KeyRepeat = 2;
-      InitialKeyRepeat = 11;
+      KeyRepeat = 3;
+      InitialKeyRepeat = 13;
       ApplePressAndHoldEnabled = false;
     };
   };
