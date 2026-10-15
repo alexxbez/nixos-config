@@ -52,6 +52,9 @@
       KeyRepeat = 3;
       InitialKeyRepeat = 13;
       ApplePressAndHoldEnabled = false;
+
+      
+      "com.apple.mouse.tapBehavior" = 1;
     };
   };
 
