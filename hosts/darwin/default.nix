@@ -46,7 +46,7 @@
       AppleShowAllExtensions = true;
 
       KeyRepeat = 1;
-      InitialKeyRepeat = 0;
+      InitialKeyRepeat = 5;
       ApplePressAndHoldEnabled = false;
     };
   };
