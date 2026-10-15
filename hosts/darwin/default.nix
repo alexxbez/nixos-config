@@ -45,8 +45,8 @@
     NSGlobalDomain = {
       AppleShowAllExtensions = true;
 
-      KeyRepeat = 5;
-      InitialKeyRepeat = 10;
+      KeyRepeat = 3;
+      InitialKeyRepeat = 7;
       ApplePressAndHoldEnabled = false;
     };
   };
