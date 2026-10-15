@@ -56,7 +56,7 @@
     NSGlobalDomain = {
       AppleShowAllExtensions = true;
 
-      KeyRepeat = 3;
+      KeyRepeat = 2;
       InitialKeyRepeat = 13;
       ApplePressAndHoldEnabled = false;
     };
@@ -65,6 +65,10 @@
   system.keyboard = {
     enableKeyMapping = true;
     swapCapsLockAndEscape = true;
+  };
+
+  power = {
+    sleep.display = 5;
   };
 
   nix-homebrew = {
