@@ -68,7 +68,7 @@
   };
 
   power = {
-    sleep.display = 5;
+    sleep.display = "never";
   };
 
   nix-homebrew = {
@@ -101,6 +101,7 @@
       "kitty"
       "ghostty"
       "nikitabobko/tap/aerospace"
+      "docker-desktop"
     ];
   };
 }
