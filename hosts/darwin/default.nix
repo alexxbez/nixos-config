@@ -86,6 +86,12 @@
     };
     enableFishIntegration = true;
     enableZshIntegration = true;
+
+    brews = [
+      "swiftlint"
+      "swiftformat"
+    ];
+    
     casks = [
       # "anki"
       "calibre"
